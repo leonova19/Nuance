@@ -13,7 +13,7 @@ export default function Home() {
     <SiteHeader/>
 
     <section className="hero" id="top">
-      <div className="hero-copy"><p className="eyebrow">Время естественной красоты</p><h1>Искусство<em>тонких акцентов</em></h1><p className="hero-intro">Перманентный макияж, ресницы и брови,<br/>которые подчёркивают вашу естественную красоту.</p><div className="hero-actions"><a className="primary-button" href="/services">Посмотреть услуги <ArrowUpRight size={18}/></a></div></div>
+      <div className="hero-copy"><p className="eyebrow">Время естественной красоты</p><h1>Искусство<em>тонких акцентов</em></h1><p className="hero-intro">Перманентный макияж, ресницы и брови,<br/>которые подчёркивают вашу естественную красоту</p><div className="hero-actions"><a className="primary-button" href="/services">Посмотреть услуги</a></div></div>
       <div className="hero-visual" aria-label="Эстетика NUANCE"><div className="hero-image" role="img" aria-label="Крупный план естественного макияжа глаз и ресниц"/><p className="image-note">01 / Естественный результат</p></div>
       <div className="hero-side-note"><span>Nuance</span><p>Тонкий оттенок.<br/>Едва заметная деталь.<br/>Точное различие.</p></div>
     </section>
