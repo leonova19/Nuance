@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowRight, ArrowUpRight, MessageCircle, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, MessageCircle, Sparkles } from 'lucide-react';
 import { SiteHeader } from '@/components/site-header';
 
 const permanent = [
@@ -13,11 +13,10 @@ export default function Home() {
     <SiteHeader/>
 
     <section className="hero" id="top">
-      <div className="hero-copy"><p className="eyebrow">Студия естественной красоты</p><h1>Искусство замечать<em>тонкости.</em></h1><p className="hero-intro">Перманентный макияж, наращивание ресниц и оформление бровей — деликатно, точно и всегда про вашу индивидуальность.</p><div className="hero-actions"><a className="primary-button" href="#services">Выбрать процедуру <ArrowUpRight size={18}/></a><a className="text-link" href="#shop">Магазин Aromatic 89 <ArrowDownRight size={17}/></a></div></div>
+      <div className="hero-copy"><p className="eyebrow">Время естественной красоты</p><h1>Искусство<em>тонких акцентов</em></h1><p className="hero-intro">Перманентный макияж, ресницы и брови,<br/>которые подчёркивают вашу естественную красоту.</p><div className="hero-actions"><a className="primary-button" href="/services">Посмотреть услуги <ArrowUpRight size={18}/></a></div></div>
       <div className="hero-visual" aria-label="Эстетика NUANCE"><div className="hero-image" role="img" aria-label="Крупный план естественного макияжа глаз и ресниц"/><p className="image-note">01 / Естественный результат</p></div>
       <div className="hero-side-note"><span>Nuance</span><p>Тонкий оттенок.<br/>Едва заметная деталь.<br/>Точное различие.</p></div>
     </section>
-    <section className="intro-strip" aria-label="Философия бренда"><p>Не изменить до неузнаваемости</p><span>✦</span><p>Подчеркнуть индивидуальность</p><span>✦</span><p>Создать гармонию в деталях</p></section>
 
     <section className="services section-pad" id="services">
       <div className="section-heading"><p className="eyebrow">01 / Услуги</p><h2>Красота, в которой<br/><em>вы остаётесь собой</em></h2><p>Каждая процедура начинается с разговора, точного подбора формы и оттенка — и заканчивается естественным результатом.</p></div>
