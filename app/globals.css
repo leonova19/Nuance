@@ -61,3 +61,5 @@ footer{background:var(--sage)}
 .desktop-nav,.mobile-menu nav{color:var(--plum)}
 .hero{min-height:640px;background:var(--cream-light)}.hero-copy{padding-top:58px;padding-bottom:58px}.hero h1{max-width:680px;font-size:clamp(48px,5vw,82px);line-height:.92;letter-spacing:-.045em}.hero h1 em{margin-top:.05em}.hero h1 em::after{content:none}.hero-intro{margin-top:30px;margin-left:0;max-width:560px}.hero-actions{margin-top:30px;margin-left:0}.hero-visual{min-height:640px}
 @media(max-width:720px){.hero{min-height:auto}.hero-copy{padding-top:55px;padding-bottom:48px}.hero h1{font-size:clamp(46px,14vw,68px)}.hero-visual{min-height:500px}.hero-image{min-height:500px}}
+.hero{min-height:480px}.hero-copy{padding-top:34px;padding-bottom:34px}.hero-copy .eyebrow{margin-bottom:18px}.hero h1{font-size:clamp(42px,4.2vw,68px)}.hero-intro{margin-top:20px;line-height:1.5}.hero-actions{margin-top:22px}.primary-button{min-height:46px}.hero-visual,.hero-image{min-height:480px}
+@media(max-width:720px){.hero-copy{padding-top:42px;padding-bottom:40px}.hero h1{font-size:clamp(42px,12vw,58px)}.hero-visual,.hero-image{min-height:420px}}
