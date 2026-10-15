@@ -54,3 +54,5 @@ footer{background:var(--sage)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important}}
 .language-switcher{display:flex;align-items:center;border:1px solid rgba(69,43,48,.35);padding:3px}.language-switcher button{border:0;background:transparent;color:var(--aubergine);min-width:36px;height:32px;padding:0 8px;font:10px/1 Arial,sans-serif;letter-spacing:.12em;cursor:pointer;transition:background .2s,color .2s}.language-switcher button:hover{background:rgba(116,64,76,.1)}.language-switcher button.active{background:var(--plum);color:var(--cream)}
 @media(max-width:720px){.language-switcher button{min-width:31px;padding:0 6px}}
+.hero-visual{grid-column:2/-1;padding:0;border:0;background:transparent;color:inherit;min-height:100%;overflow:hidden}.hero-image{min-height:100%;width:100%;background-size:cover;background-position:68% center;box-shadow:none}.hero-image::after{content:none}.hero-visual .image-note,.hero-side-note{display:none}
+@media(max-width:720px){.hero-visual{grid-column:auto;min-height:620px;padding:0}.hero-image{min-height:620px;background-position:66% center}}
