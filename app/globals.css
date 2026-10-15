@@ -56,3 +56,4 @@ footer{background:var(--sage)}
 @media(max-width:720px){.language-switcher button{min-width:31px;padding:0 6px}}
 .hero-visual{grid-column:2/-1;padding:0;border:0;background:transparent;color:inherit;min-height:100%;overflow:hidden}.hero-image{min-height:100%;width:100%;background-size:cover;background-position:68% center;box-shadow:none}.hero-image::after{content:none}.hero-visual .image-note,.hero-side-note{display:none}
 @media(max-width:720px){.hero-visual{grid-column:auto;min-height:620px;padding:0}.hero-image{min-height:620px;background-position:66% center}}
+.empty-page{min-height:100vh;background:var(--cream-light)}.empty-page>div{min-height:calc(100vh - 104px)}

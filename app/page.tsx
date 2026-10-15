@@ -1,5 +1,5 @@
-import { ArrowDownRight, ArrowRight, ArrowUpRight, MessageCircle, Menu, ShoppingBag, Sparkles } from 'lucide-react';
-import { LanguageSwitcher } from '@/components/language-switcher';
+import { ArrowDownRight, ArrowRight, ArrowUpRight, MessageCircle, Sparkles } from 'lucide-react';
+import { SiteHeader } from '@/components/site-header';
 
 const permanent = [
   ['01', 'Брови', 'Пудровое напыление · Волоски + пудра'], ['02', 'Губы', 'Акварельная техника · Помадный прокрас'],
@@ -10,11 +10,7 @@ const shopItems = [['Парфюмерия для дома', 'Диффузоры'
 
 export default function Home() {
   return <main>
-    <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="NUANCE — на главную">NUANCE<span>Permanent · Lashes · Brows</span></a>
-      <nav className="desktop-nav" aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#about">О мастере</a><a href="#academy">Обучение</a><a href="#shop">Магазин</a></nav>
-      <div className="header-actions"><a className="bag-link" href="#shop" aria-label="Корзина"><ShoppingBag size={18} strokeWidth={1.5}/><span>0</span></a><LanguageSwitcher/><details className="mobile-menu"><summary aria-label="Открыть меню"><Menu size={22}/></summary><nav><a href="#services">Услуги</a><a href="#about">О мастере</a><a href="#academy">Обучение</a><a href="#shop">Магазин</a></nav></details></div>
-    </header>
+    <SiteHeader/>
 
     <section className="hero" id="top">
       <div className="hero-copy"><p className="eyebrow">Студия естественной красоты</p><h1>Искусство замечать<em>тонкости.</em></h1><p className="hero-intro">Перманентный макияж, наращивание ресниц и оформление бровей — деликатно, точно и всегда про вашу индивидуальность.</p><div className="hero-actions"><a className="primary-button" href="#services">Выбрать процедуру <ArrowUpRight size={18}/></a><a className="text-link" href="#shop">Магазин Aromatic 89 <ArrowDownRight size={17}/></a></div></div>
@@ -36,6 +32,6 @@ export default function Home() {
     <section className="shop section-pad" id="shop"><div className="shop-top"><div><p className="eyebrow">04 / Магазин</p><h2>Ароматы для<br/><em>вашего пространства</em></h2></div><div><span className="aromatic">AROMATIC 89</span><p>Детали, которые создают настроение дома, в машине и в каждом дне.</p><a className="text-link" href="#catalog">Смотреть все товары <ArrowRight size={16}/></a></div></div><div className="products" id="catalog">{shopItems.map(([name,type],i) => <article className={`product product-${i+1}`} key={name}><div className="product-stage"><div className="bottle"><i/><b>A89</b></div><span>0{i+1}</span></div><p>{type}</p><h3>{name}</h3><a href="#booking">Смотреть коллекцию <ArrowUpRight size={16}/></a></article>)}</div></section>
 
     <section className="booking" id="booking"><div><p className="eyebrow light">Запись в NUANCE</p><h2>Ваши детали.<br/><em>Ваш NUANCE.</em></h2></div><div className="booking-copy"><p>Поможем выбрать процедуру, ответим на вопросы и найдём удобное время.</p><div className="booking-actions"><a className="light-button" href="https://instagram.com" target="_blank" rel="noreferrer"><MessageCircle size={18}/> Написать в Instagram</a><a className="ghost-button" href="tel:+3720000000">Позвонить</a></div><small>Контакты и адрес будут добавлены перед запуском</small></div></section>
-    <footer><a className="wordmark footer-logo" href="#top">NUANCE<span>Permanent · Lashes · Brows</span></a><p>© 2026 NUANCE. Эстетика в каждой детали.</p><div><a href="#services">Услуги</a><a href="#academy">Обучение</a><a href="#shop">Магазин</a></div></footer>
+    <footer><a className="wordmark footer-logo" href="/">NUANCE<span>Permanent · Lashes · Brows</span></a><p>© 2026 NUANCE. Эстетика в каждой детали.</p><div><a href="/services">Услуги</a><a href="/delivery">Доставка</a><a href="/shop">Магазин</a></div></footer>
   </main>;
 }
