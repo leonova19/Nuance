@@ -1,4 +1,5 @@
 import { ArrowDownRight, ArrowRight, ArrowUpRight, MessageCircle, Menu, ShoppingBag, Sparkles } from 'lucide-react';
+import { LanguageSwitcher } from '@/components/language-switcher';
 
 const permanent = [
   ['01', 'Брови', 'Пудровое напыление · Волоски + пудра'], ['02', 'Губы', 'Акварельная техника · Помадный прокрас'],
@@ -12,7 +13,7 @@ export default function Home() {
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="NUANCE — на главную">NUANCE<span>Permanent · Lashes · Brows</span></a>
       <nav className="desktop-nav" aria-label="Основная навигация"><a href="#services">Услуги</a><a href="#about">О мастере</a><a href="#academy">Обучение</a><a href="#shop">Магазин</a></nav>
-      <div className="header-actions"><a className="bag-link" href="#shop" aria-label="Корзина"><ShoppingBag size={18} strokeWidth={1.5}/><span>0</span></a><a className="book-link" href="#booking">Записаться</a><details className="mobile-menu"><summary aria-label="Открыть меню"><Menu size={22}/></summary><nav><a href="#services">Услуги</a><a href="#about">О мастере</a><a href="#academy">Обучение</a><a href="#shop">Магазин</a></nav></details></div>
+      <div className="header-actions"><a className="bag-link" href="#shop" aria-label="Корзина"><ShoppingBag size={18} strokeWidth={1.5}/><span>0</span></a><LanguageSwitcher/><details className="mobile-menu"><summary aria-label="Открыть меню"><Menu size={22}/></summary><nav><a href="#services">Услуги</a><a href="#about">О мастере</a><a href="#academy">Обучение</a><a href="#shop">Магазин</a></nav></details></div>
     </header>
 
     <section className="hero" id="top">
