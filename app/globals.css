@@ -122,3 +122,4 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 @media(max-width:640px){.procedure-row{grid-template-columns:30px minmax(0,1fr)}}
 .feature-card .feature-more{justify-content:flex-start}
 .procedure-row{width:100%}
+.procedure-row{position:relative;border-bottom:0}.procedure-row:not(:last-child)::after{content:'';position:absolute;bottom:0;height:1px;background:var(--line)}.service-layout:not(.lash-layout) .procedure-row:not(:last-child)::after{left:0;right:calc(-1 * clamp(24px,6.5vw,110px))}.lash-layout .procedure-row:not(:last-child)::after{left:calc(-1 * clamp(24px,6.5vw,110px));right:0}
