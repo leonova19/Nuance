@@ -65,3 +65,4 @@ footer{background:var(--sage)}
 @media(max-width:720px){.hero-copy{padding-top:42px;padding-bottom:40px}.hero h1{font-size:clamp(42px,12vw,58px)}.hero-visual,.hero-image{min-height:420px}}
 .hero-visual{position:relative}.hero-visual::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,var(--cream-light) 0%,rgba(251,247,235,.92) 5%,rgba(251,247,235,.58) 13%,rgba(251,247,235,0) 30%)}
 @media(max-width:720px){.hero-visual::before{content:none}}
+.footer-links{max-width:760px;justify-content:flex-end;row-gap:12px;flex-wrap:wrap}.footer-links a{white-space:nowrap}.empty-page{display:flex;flex-direction:column}.empty-page>div{flex:1}
