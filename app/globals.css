@@ -130,3 +130,4 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 @media(max-width:640px){.service-photo{min-height:230px}.showcase-panel{min-height:0;padding:28px 22px}.showcase-panel>h3{font-size:40px}.showcase-row{grid-template-columns:30px 1fr;min-height:38px}.showcase-row h4{font-size:18px}}
 .showcase-panel>h3{text-align:center}
 .showcase-list{margin-top:14px}
+.shop{padding-top:48px}
