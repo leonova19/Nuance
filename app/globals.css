@@ -121,3 +121,4 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 .procedure-row{grid-template-columns:44px minmax(0,1fr)}
 @media(max-width:640px){.procedure-row{grid-template-columns:30px minmax(0,1fr)}}
 .feature-card .feature-more{justify-content:flex-start}
+.procedure-row{width:100%}
