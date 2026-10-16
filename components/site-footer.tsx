@@ -1,5 +1,6 @@
 const primaryLinks = [
   ['/services', 'Услуги'],
+  ['/courses', 'Курсы'],
   ['/shop', 'Магазин'],
   ['/delivery', 'Доставка'],
   ['/contacts', 'Контакты'],

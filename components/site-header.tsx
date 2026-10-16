@@ -3,6 +3,7 @@ import { LanguageSwitcher } from '@/components/language-switcher';
 
 const links = [
   ['/services', 'Услуги'],
+  ['/courses', 'Курсы'],
   ['/shop', 'Магазин'],
   ['/delivery', 'Доставка'],
   ['/contacts', 'Контакты'],
