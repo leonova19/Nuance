@@ -96,3 +96,5 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 @media(max-width:900px){.nuance-statement-copy>p:not(.nuance-signature){white-space:normal;max-width:720px}}
 .nuance-statement{min-height:250px;padding-top:34px;padding-bottom:34px}.nuance-statement h2{font-size:clamp(32px,3vw,52px)}
 @media(max-width:640px){.nuance-statement{min-height:300px;padding-top:42px;padding-bottom:42px}.nuance-statement h2{font-size:30px}}
+.nuance-statement-copy{width:100%;max-width:none}.nuance-statement h2{width:100%;max-width:none;white-space:nowrap}
+@media(max-width:900px){.nuance-statement h2{white-space:normal}}
