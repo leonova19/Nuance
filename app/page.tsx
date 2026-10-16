@@ -41,6 +41,7 @@ export default function Home() {
           <h2>NUANCE — это не про изменение внешности<br/><em>Это про детали, которые подчёркивают вашу индивидуальность</em></h2>
         </div>
       </div>
+      <div className="services-title"><h2><span>Услуги</span><em>тонкости и красоты</em></h2></div>
       <article className="service-showcase permanent-showcase">
         <div className="service-photo permanent-photo" role="img" aria-label="Перманентный макияж губ"/>
         <div className="showcase-panel"><h3>Перманентный<br/>макияж</h3><div className="showcase-list">{permanent.map(([n,title]) => <a href="/services" className="showcase-row" key={title}><span>{n}</span><h4>{title}</h4></a>)}</div><a className="showcase-more" href="/services">Подробнее</a></div>
