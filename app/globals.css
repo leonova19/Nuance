@@ -131,4 +131,4 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 .showcase-panel>h3{text-align:center}
 .showcase-list{margin-top:14px}
 .shop{padding-top:48px}
-.product-stage{background:var(--sage)!important}.product-stage::before{display:none}.product-stage>img{width:100%;height:100%;display:block;object-fit:contain}.product-stage>span{z-index:1}
+.product-stage{background:#c6c89b47!important}.product-stage::before{display:none}.product-stage>img{width:100%;height:100%;display:block;object-fit:contain}.product-stage>span{z-index:1}
