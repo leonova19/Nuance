@@ -158,22 +158,22 @@ footer .footer-primary{display:grid;grid-template-columns:repeat(2,max-content);
 .services-title h2 em{color:inherit;font-style:normal}
 
 /* Warm ivory and brown palette */
-body{background:var(--ivory);color:var(--espresso)}
+body{background:var(--greige);color:var(--espresso)}
 .site-header{background:rgba(250,249,246,.92)}
 .hero{background:var(--linen)}
 .hero-visual{position:relative;isolation:isolate;overflow:hidden}
 .hero-image{position:relative;z-index:0}
 .hero-visual::before{display:block!important;content:'';position:absolute!important;inset:0 auto 0 -1px!important;width:clamp(180px,25vw,430px)!important;z-index:3!important;pointer-events:none;background:linear-gradient(90deg,var(--linen) 0%,rgba(239,235,230,.98) 16%,rgba(239,235,230,.82) 34%,rgba(239,235,230,.46) 58%,rgba(239,235,230,0) 100%)!important}
-.services{background:linear-gradient(180deg,var(--ivory) 0%,var(--linen) 100%)}
+.services{background:var(--beige)}
 .nuance-statement{background:var(--linen)}
 .permanent-showcase .showcase-panel{background:var(--taupe)}
 .lashes-showcase .showcase-panel{background:var(--ivory)}
 .brows-showcase .showcase-panel{background:var(--carob);color:var(--ivory)}
-.shop{background:var(--linen)}
-.product-stage{background:color-mix(in srgb,var(--taupe) 28%,var(--ivory))!important;border-color:var(--carob)}
-.academy{background:color-mix(in srgb,var(--taupe) 12%,var(--ivory))}
+.shop{background:var(--greige)}
+.product-stage{background:color-mix(in srgb,var(--taupe) 46%,var(--beige))!important;border-color:var(--carob)}
+.academy{background:var(--beige)}
 .academy-meta{background:var(--carob)}
 .primary-button,.book-link,.academy .light-button{background:var(--burgundy)}
 .hero h1,.services-title h2,.shop h2,.academy h2{color:var(--burgundy)}
-footer{background:var(--beige);color:var(--espresso)}
+footer{background:color-mix(in srgb,var(--taupe) 58%,var(--beige));color:var(--espresso)}
 @media(max-width:720px){.hero-visual::before{display:none!important}}
