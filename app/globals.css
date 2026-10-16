@@ -102,3 +102,5 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 @media(max-width:900px){.service-layout{grid-template-columns:1fr}.permanent-card{min-height:150px}.procedure-list{padding-top:10px}}
 .service-layout{grid-template-columns:1fr 1fr;align-items:stretch}.permanent-card{width:min(360px,72%);min-height:180px;align-self:center;justify-self:center}.procedure-list{padding-left:0}
 @media(max-width:900px){.service-layout{grid-template-columns:1fr}.permanent-card{width:100%;min-height:150px;margin:28px 0}.procedure-list{padding-top:0}}
+.service-layout{border-top:0}.permanent-card{align-self:start;display:flex;align-items:center;text-align:center;margin-top:0}.permanent-card h3{width:100%;text-align:center}.procedure-row{min-height:62px;padding-top:8px;padding-bottom:8px}.procedure-row h3{font-size:20px;line-height:1.05}.procedure-row p{margin-top:4px;font-size:10px;line-height:1.25}
+@media(max-width:900px){.permanent-card{margin:0 0 18px}.procedure-row{min-height:60px}}
