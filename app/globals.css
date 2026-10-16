@@ -118,3 +118,6 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 .procedure-row{height:74px;min-height:74px}
 .permanent-card,.lash-card,.brow-card{justify-content:space-between;align-items:stretch}.feature-card .feature-more{width:100%;margin-top:24px;padding-top:13px;align-self:stretch;font-size:10px;letter-spacing:.16em}
 .lash-layout,.brow-layout{padding-top:36px}.procedure-row{width:min(100%,520px)}
+.procedure-row{grid-template-columns:44px minmax(0,1fr)}
+@media(max-width:640px){.procedure-row{grid-template-columns:30px minmax(0,1fr)}}
+.feature-card .feature-more{justify-content:flex-start}
