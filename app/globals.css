@@ -113,3 +113,5 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 .service-layout,.lash-layout,.brow-layout{border-bottom:0}
 .procedure-row{display:flex;justify-content:flex-start;gap:0}.procedure-row>span{width:44px;flex:0 0 44px}.procedure-row>div{flex:0 1 auto}.procedure-row>svg{flex:0 0 auto;margin-left:8px}
 @media(max-width:640px){.procedure-row>span{width:30px;flex-basis:30px}.procedure-row>svg{margin-left:6px}}
+.procedure-row{display:grid;width:min(100%,620px);grid-template-columns:44px minmax(0,1fr) 18px;column-gap:12px;justify-content:start}.procedure-row>span{width:auto;flex:none}.procedure-row>svg{margin-left:0}
+@media(max-width:640px){.procedure-row{grid-template-columns:30px minmax(0,1fr) 18px;column-gap:8px}}
