@@ -20,8 +20,8 @@ const brows = [
 ];
 const shopItems = [
   ['Парфюмерия для дома', 'Диффузоры', '/shop-diffuser.png'],
-  ['Ароматы для авто', 'Car perfume', '/shop-car-fragrance.png'],
-  ['Уход и атмосфера', 'Aromatic 89', '/shop-hand-care.png'],
+  ['Ароматы для авто', 'Автомобильные ароматы', '/shop-car-fragrance.png'],
+  ['Уход и парфюм', 'Косметические товары', '/shop-hand-care.png'],
 ];
 
 export default function Home() {
