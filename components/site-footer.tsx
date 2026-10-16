@@ -18,10 +18,14 @@ export function SiteFooter(){
       <nav className="footer-primary" aria-label="Навигация в футере">
         {primaryLinks.map(([href,label]) => <a href={href} key={href}>{label}</a>)}
       </nav>
+      <div className="footer-info">
+        <p>Jõhvi, Estonia</p>
+        <a href="mailto:nuancesupport@gmail.com">nuancesupport@gmail.com</a>
+        <div className="footer-legal">{legalLinks.map(([href,label]) => <a href={href} key={href}>{label}</a>)}</div>
+      </div>
     </div>
     <div className="footer-bottom">
-      <p>© 2026 NUANCE. Все права защищены</p>
-      <div className="footer-legal">{legalLinks.map(([href,label]) => <a href={href} key={href}>{label}</a>)}</div>
+      <p>© 2026 NUANCE.</p>
     </div>
   </footer>;
 }
