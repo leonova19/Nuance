@@ -1,11 +1,15 @@
-import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 
 const permanent = [
-  ['01', 'Брови', 'Пудровое напыление · Волоски + пудра'], ['02', 'Губы', 'Акварельная техника · Помадный прокрас'],
-  ['03', 'Глаза', 'Стрелка с растушёвкой · Межресничка'], ['04', 'Ремувер', 'Удаление или обновление перманента'],
-  ['05', 'Камуфляж', 'Деликатная коррекция шрамов'], ['06', 'Трихопигментация', 'Визуальная коррекция густоты волос'],
+  ['01', 'Пудровое напыление', 'Комбинированная техника: волоски + пудра'],
+  ['02', 'Губы', 'Акварельная техника и помадный прокрас'],
+  ['03', 'Стрелка с растушёвкой', ''],
+  ['04', 'Межресничка', ''],
+  ['05', 'Ремувер', 'Удаление или обновление перманента'],
+  ['06', 'Камуфляж шрамов', ''],
+  ['07', 'Трихопигментация', ''],
 ];
 const shopItems = [['Парфюмерия для дома', 'Диффузоры'], ['Ароматы для авто', 'Car perfume'], ['Уход и атмосфера', 'Aromatic 89']];
 
@@ -26,7 +30,7 @@ export default function Home() {
           <h2>NUANCE — это не про изменение внешности<br/><em>Это про детали, которые подчёркивают вашу индивидуальность</em></h2>
         </div>
       </div>
-      <div className="service-layout"><article className="feature-card permanent-card"><div><span className="card-index">01</span><h3>Перманентный<br/>макияж</h3></div><Sparkles size={30} strokeWidth={1}/><a href="#booking">Подобрать процедуру <ArrowUpRight size={17}/></a></article><div className="procedure-list">{permanent.map(([n,title,desc]) => <a href="#booking" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3><p>{desc}</p></div><ArrowUpRight size={18}/></a>)}</div></div>
+      <div className="service-layout"><article className="feature-card permanent-card"><h3>Перманентный<br/>макияж</h3></article><div className="procedure-list">{permanent.map(([n,title,desc]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3>{desc && <p>{desc}</p>}</div><ArrowUpRight size={18}/></a>)}</div></div>
       <div className="service-cards"><article className="slim-card sage-card"><span>02</span><div><p>Взгляд без лишнего</p><h3>Наращивание<br/>ресниц</h3></div><ul><li>Классика</li><li>Объём 3D+</li><li>LED: классика и объём</li></ul><a href="#booking">Подробнее <ArrowRight size={16}/></a></article><article className="slim-card cream-card"><span>03</span><div><p>Точная форма</p><h3>Оформление<br/>бровей хной</h3></div><p className="card-copy">Архитектура и оттенок, которые поддерживают черты лица</p><a href="#booking">Подробнее <ArrowRight size={16}/></a></article></div>
     </section>
 
