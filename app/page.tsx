@@ -3,20 +3,20 @@ import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 
 const permanent = [
-  ['01', 'Пудровое напыление', 'Комбинированная техника: волоски + пудра'],
-  ['02', 'Губы', 'Акварельная техника и помадный прокрас'],
-  ['03', 'Стрелка с растушёвкой', ''],
-  ['04', 'Межресничка', ''],
-  ['05', 'Ремувер', 'Удаление или обновление перманента'],
-  ['06', 'Камуфляж шрамов', ''],
-  ['07', 'Трихопигментация', ''],
+  ['01', 'Пудровое напыление'],
+  ['02', 'Губы'],
+  ['03', 'Стрелка с растушёвкой'],
+  ['04', 'Межресничка'],
+  ['05', 'Ремувер'],
+  ['06', 'Камуфляж шрамов'],
+  ['07', 'Трихопигментация'],
 ];
 const lashes = [
-  ['01', 'Традиционное наращивание', 'Классика · Объёмные ресницы (3D+)'],
-  ['02', 'LED-наращивание', 'Классика · Объём'],
+  ['01', 'Традиционное наращивание'],
+  ['02', 'LED-наращивание'],
 ];
 const brows = [
-  ['01', 'Оформление бровей хной', ''],
+  ['01', 'Оформление бровей хной'],
 ];
 const shopItems = [['Парфюмерия для дома', 'Диффузоры'], ['Ароматы для авто', 'Car perfume'], ['Уход и атмосфера', 'Aromatic 89']];
 
@@ -37,9 +37,9 @@ export default function Home() {
           <h2>NUANCE — это не про изменение внешности<br/><em>Это про детали, которые подчёркивают вашу индивидуальность</em></h2>
         </div>
       </div>
-      <div className="service-layout"><article className="feature-card permanent-card"><h3>Перманентный<br/>макияж</h3></article><div className="procedure-list">{permanent.map(([n,title,desc]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3>{desc && <p>{desc}</p>}</div><ArrowUpRight size={18}/></a>)}</div></div>
-      <div className="service-layout lash-layout"><div className="procedure-list">{lashes.map(([n,title,desc]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3><p>{desc}</p></div><ArrowUpRight size={18}/></a>)}</div><article className="feature-card lash-card"><h3>Наращивание<br/>ресниц</h3></article></div>
-      <div className="service-layout brow-layout"><article className="feature-card brow-card"><h3>Брови</h3></article><div className="procedure-list">{brows.map(([n,title,desc]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3>{desc && <p>{desc}</p>}</div><ArrowUpRight size={18}/></a>)}</div></div>
+      <div className="service-layout"><article className="feature-card permanent-card"><h3>Перманентный<br/>макияж</h3></article><div className="procedure-list">{permanent.map(([n,title]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3></div><ArrowUpRight size={18}/></a>)}</div></div>
+      <div className="service-layout lash-layout"><div className="procedure-list">{lashes.map(([n,title]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3></div><ArrowUpRight size={18}/></a>)}</div><article className="feature-card lash-card"><h3>Наращивание<br/>ресниц</h3></article></div>
+      <div className="service-layout brow-layout"><article className="feature-card brow-card"><h3>Брови</h3></article><div className="procedure-list">{brows.map(([n,title]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3></div><ArrowUpRight size={18}/></a>)}</div></div>
     </section>
 
     <section className="about" id="about"><div className="about-art"><span>N</span><p>NUANCE</p></div><div className="about-copy"><p className="eyebrow">02 / Философия мастера</p><h2>Тонкая работа<br/><em>Никаких случайностей</em></h2><p>NUANCE — это искусство замечать детали, которые на первый взгляд кажутся небольшими, но именно они меняют всё: изгиб ресниц, оттенок пигмента, форма бровей</p><blockquote>«Красота выглядит естественно, когда сделана с уважением к вашей индивидуальности»</blockquote><a className="text-link" href="#booking">Познакомиться с мастером <ArrowRight size={16}/></a></div></section>
