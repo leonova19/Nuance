@@ -146,3 +146,4 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 .academy-copy h2{font-family:var(--font-cormorant),serif;font-size:clamp(34px,3.6vw,54px);font-weight:400;line-height:.92;letter-spacing:-.055em}.academy-copy h2 em{display:block;margin-top:.08em;font-style:italic;color:var(--plum)}.academy-copy>p:not(.eyebrow){font-family:var(--font-jost),sans-serif;font-size:14px;line-height:1.7;font-weight:400}
 footer .footer-logo{font-size:clamp(34px,3.4vw,50px);line-height:1;letter-spacing:.12em}footer .footer-logo span{display:block;margin-top:14px;font-size:10px;line-height:1.2;letter-spacing:.27em;white-space:nowrap}
 @media(max-width:640px){footer .footer-logo{font-size:36px}footer .footer-logo span{font-size:8px;letter-spacing:.2em}}
+footer{background:#c6c89b9c}
