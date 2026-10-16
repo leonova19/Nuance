@@ -23,9 +23,7 @@ export function SiteFooter(){
         <a href="mailto:nuancesupport@gmail.com">nuancesupport@gmail.com</a>
         <div className="footer-legal">{legalLinks.map(([href,label]) => <a href={href} key={href}>{label}</a>)}</div>
       </div>
-    </div>
-    <div className="footer-bottom">
-      <p>© 2026 NUANCE.</p>
+      <p className="footer-copyright">© 2026 NUANCE.</p>
     </div>
   </footer>;
 }
