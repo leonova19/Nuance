@@ -20,7 +20,7 @@ export default function Home() {
     </section>
 
     <section className="services section-pad" id="services">
-      <div className="section-heading"><p className="eyebrow">01 / Услуги</p><h2>Красота, в которой<br/><em>вы остаётесь собой</em></h2><p>Каждая процедура начинается с разговора, точного подбора формы и оттенка — и заканчивается естественным результатом.</p></div>
+      <div className="nuance-marquee" aria-label="NUANCE">NUANCE</div>
       <div className="service-layout"><article className="feature-card permanent-card"><div><span className="card-index">01</span><h3>Перманентный<br/>макияж</h3></div><Sparkles size={30} strokeWidth={1}/><a href="#booking">Подобрать процедуру <ArrowUpRight size={17}/></a></article><div className="procedure-list">{permanent.map(([n,title,desc]) => <a href="#booking" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3><p>{desc}</p></div><ArrowUpRight size={18}/></a>)}</div></div>
       <div className="service-cards"><article className="slim-card sage-card"><span>02</span><div><p>Взгляд без лишнего</p><h3>Наращивание<br/>ресниц</h3></div><ul><li>Классика</li><li>Объём 3D+</li><li>LED: классика и объём</li></ul><a href="#booking">Подробнее <ArrowRight size={16}/></a></article><article className="slim-card cream-card"><span>03</span><div><p>Точная форма</p><h3>Оформление<br/>бровей хной</h3></div><p className="card-copy">Архитектура и оттенок, которые поддерживают черты лица.</p><a href="#booking">Подробнее <ArrowRight size={16}/></a></article></div>
     </section>
