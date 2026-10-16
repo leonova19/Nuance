@@ -132,3 +132,4 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 .showcase-list{margin-top:14px}
 .shop{padding-top:48px}
 .product-stage{background:#c6c89b47!important}.product-stage::before{display:none}.product-stage>img{width:100%;height:100%;display:block;object-fit:contain}.product-stage>span{z-index:1}
+.shop-title span,.shop-title em{display:block}.shop .shop-title em{width:max-content;margin:.08em 0 0 clamp(44px,8vw,135px);padding:0;background:none;color:var(--plum);font-style:italic}.shop-title{line-height:.88!important;letter-spacing:-.055em!important}
