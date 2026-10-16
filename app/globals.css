@@ -116,3 +116,4 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 .procedure-row{display:grid;width:min(100%,620px);grid-template-columns:44px minmax(0,1fr) 18px;column-gap:12px;justify-content:start}.procedure-row>span{width:auto;flex:none}.procedure-row>svg{margin-left:0}
 @media(max-width:640px){.procedure-row{grid-template-columns:30px minmax(0,1fr) 18px;column-gap:8px}}
 .procedure-row{height:74px;min-height:74px}
+.permanent-card,.lash-card,.brow-card{justify-content:space-between;align-items:stretch}.feature-card .feature-more{width:100%;margin-top:24px;padding-top:13px;align-self:stretch;font-size:10px;letter-spacing:.16em}
