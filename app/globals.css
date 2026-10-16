@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-:root { --ivory:#faf6ee; --linen:#f6efe3; --sandstone:#ddd7c9; --warm-sand:#dccfbc; --camel:#a88668; --coffee:#765844; --espresso:#3f3028; --cream:var(--ivory); --sand:var(--warm-sand); --sage:var(--sandstone); --olive:var(--camel); --taupe:var(--coffee); --forest:var(--espresso); --cream-light:var(--linen); --aubergine:var(--espresso); --plum:var(--coffee); --line:rgba(63,48,40,.2); }
+:root { --ivory:#faf6ee; --linen:#f6efe3; --sandstone:#ddd7c9; --warm-sand:#dccfbc; --sage-accent:#aeb49a; --sage-deep:#7f866e; --camel:#a88668; --coffee:#765844; --espresso:#3f3028; --cream:var(--ivory); --sand:var(--warm-sand); --sage:var(--sage-accent); --olive:var(--sage-deep); --taupe:var(--coffee); --forest:var(--espresso); --cream-light:var(--linen); --aubergine:var(--espresso); --plum:var(--coffee); --line:rgba(63,48,40,.2); }
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream-light);color:var(--aubergine);font-family:Arial,Helvetica,sans-serif} a{color:inherit;text-decoration:none} button{color:inherit}
 .site-header{height:104px;padding:0 clamp(24px,4.5vw,76px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--line);position:relative;z-index:10}
 .wordmark{width:max-content;font-size:27px;line-height:.85;letter-spacing:.15em;font-weight:500}.wordmark span{display:block;margin-top:12px;font-size:7px;text-transform:uppercase;letter-spacing:.24em}
@@ -25,7 +25,7 @@
 .booking{padding:clamp(80px,10vw,150px) clamp(24px,9vw,150px);display:grid;grid-template-columns:1.2fr .8fr;gap:80px;background:var(--plum);color:var(--cream)}.booking-copy{display:flex;flex-direction:column;justify-content:flex-end}.booking-copy>p{max-width:440px;font-size:16px;line-height:1.7}.booking-actions{display:flex;gap:12px;margin:34px 0}.ghost-button{display:inline-flex;align-items:center;padding:17px 25px;border:1px solid rgba(250,246,238,.55);font-size:10px;text-transform:uppercase;letter-spacing:.14em}.booking small{font-size:9px;letter-spacing:.08em;color:rgba(250,246,238,.62)}
 footer{min-height:160px;padding:38px clamp(24px,6.5vw,110px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-top:1px solid var(--line)}footer>p{font-size:9px;text-transform:uppercase;letter-spacing:.12em}footer>div{justify-self:end;display:flex;gap:24px;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
 /* Richer NUANCE palette and editorial polish */
-:root{--cream-light:var(--linen);--sage-deep:var(--camel);--shadow:0 28px 70px rgba(63,48,40,.14)}
+:root{--cream-light:var(--linen);--shadow:0 28px 70px rgba(63,48,40,.14)}
 .site-header{background:rgba(250,246,238,.86);backdrop-filter:blur(18px)}
 .book-link{border:0;background:var(--plum);color:var(--cream);padding:13px 20px;transition:background .25s,transform .25s}.book-link:hover{background:var(--aubergine);transform:translateY(-2px)}
 .hero{background:linear-gradient(135deg,var(--cream-light) 0 54%,var(--cream) 54%)}
@@ -163,11 +163,11 @@ body{background:var(--linen);color:var(--espresso)}
 .hero{background:linear-gradient(135deg,var(--linen) 0 48%,var(--warm-sand) 100%)}
 .services{background:var(--linen)}
 .nuance-statement{background:var(--ivory)}
-.permanent-showcase .showcase-panel{background:var(--warm-sand)}
+.permanent-showcase .showcase-panel{background:color-mix(in srgb,var(--sage-accent) 72%,var(--ivory))}
 .lashes-showcase .showcase-panel{background:var(--ivory)}
 .brows-showcase .showcase-panel{background:var(--coffee);color:var(--ivory)}
 .shop{background:var(--linen)}
-.product-stage{background:color-mix(in srgb,var(--warm-sand) 48%,var(--ivory))!important;border-color:var(--coffee)}
+.product-stage{background:color-mix(in srgb,var(--sage-accent) 22%,var(--ivory))!important;border-color:var(--coffee)}
 .academy{background:var(--ivory)}
 .academy-meta{background:var(--espresso)}
 footer{background:var(--warm-sand)}
