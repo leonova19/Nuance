@@ -18,7 +18,11 @@ const lashes = [
 const brows = [
   ['01', 'Оформление бровей хной'],
 ];
-const shopItems = [['Парфюмерия для дома', 'Диффузоры'], ['Ароматы для авто', 'Car perfume'], ['Уход и атмосфера', 'Aromatic 89']];
+const shopItems = [
+  ['Парфюмерия для дома', 'Диффузоры', '/shop-diffuser.png'],
+  ['Ароматы для авто', 'Car perfume', '/shop-car-fragrance.png'],
+  ['Уход и атмосфера', 'Aromatic 89', '/shop-hand-care.png'],
+];
 
 export default function Home() {
   return <main>
@@ -51,7 +55,7 @@ export default function Home() {
       </article>
     </section>
 
-    <section className="shop section-pad" id="shop"><div className="shop-top"><div><h2>Ароматы для<br/><em>вашего пространства</em></h2></div><div><span className="aromatic">AROMATIC 89</span><p>Детали, которые создают настроение дома, в машине и в каждом дне</p><a className="text-link" href="#catalog">Смотреть все товары <ArrowRight size={16}/></a></div></div><div className="products" id="catalog">{shopItems.map(([name,type],i) => <article className={`product product-${i+1}`} key={name}><div className="product-stage"><div className="bottle"><i/><b>A89</b></div><span>0{i+1}</span></div><p>{type}</p><h3>{name}</h3><a href="#booking">Смотреть коллекцию <ArrowUpRight size={16}/></a></article>)}</div></section>
+    <section className="shop section-pad" id="shop"><div className="shop-top"><div><h2>Ароматы для<br/><em>вашего пространства</em></h2></div><div><span className="aromatic">AROMATIC 89</span><p>Детали, которые создают настроение дома, в машине и в каждом дне</p><a className="text-link" href="#catalog">Смотреть все товары <ArrowRight size={16}/></a></div></div><div className="products" id="catalog">{shopItems.map(([name,type,image],i) => <article className={`product product-${i+1}`} key={name}><div className="product-stage"><img src={image} alt={name}/><span>0{i+1}</span></div><p>{type}</p><h3>{name}</h3><a href="#booking">Смотреть коллекцию <ArrowUpRight size={16}/></a></article>)}</div></section>
 
     <section className="academy section-pad" id="academy"><div className="academy-copy"><p className="eyebrow light">03 / NUANCE Academy</p><h2>Учиться видеть<br/><em>детали</em></h2><p>Полный курс по наращиванию ресниц и оформлению бровей: от уверенной техники до красивого портфолио и работы с клиентом</p><a className="light-button" href="#booking">Узнать о курсе <ArrowUpRight size={18}/></a></div><div className="academy-meta"><div><span>01</span><p>Теория без воды</p></div><div><span>02</span><p>Практика на модели</p></div><div><span>03</span><p>Поддержка после курса</p></div></div></section>
 
