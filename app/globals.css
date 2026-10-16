@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-:root { --white:#faf9f6; --greige:#efebe6; --beige:#ded5cc; --taupe:#a3988e; --brown:#6b5549; --deep-brown:#463831; --ink:#2f2926; --ivory:var(--white); --linen:var(--greige); --matcha:var(--taupe); --pistache:var(--beige); --carob:var(--brown); --espresso:var(--ink); --sandstone:var(--beige); --warm-sand:var(--taupe); --sage-accent:var(--beige); --sage-deep:var(--taupe); --camel:var(--taupe); --coffee:var(--brown); --cream:var(--white); --sand:var(--taupe); --sage:var(--beige); --olive:var(--taupe); --forest:var(--ink); --cream-light:var(--greige); --aubergine:var(--ink); --plum:var(--deep-brown); --burgundy:var(--deep-brown); --line:rgba(70,56,49,.2); }
+:root { --white:#fbf9f3; --greige:#f5f1e8; --beige:#e8e1d4; --taupe:#b8af9f; --brown:#756f61; --deep-brown:#4f5146; --ink:#2d3028; --ivory:var(--white); --linen:var(--greige); --matcha:var(--taupe); --pistache:var(--beige); --carob:var(--brown); --espresso:var(--ink); --sandstone:var(--beige); --warm-sand:var(--taupe); --sage-accent:var(--beige); --sage-deep:var(--taupe); --camel:var(--taupe); --coffee:var(--brown); --cream:var(--white); --sand:var(--taupe); --sage:var(--beige); --olive:var(--taupe); --forest:var(--ink); --cream-light:var(--greige); --aubergine:var(--ink); --plum:var(--deep-brown); --burgundy:var(--deep-brown); --line:rgba(45,48,40,.15); }
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream-light);color:var(--aubergine);font-family:Arial,Helvetica,sans-serif} a{color:inherit;text-decoration:none} button{color:inherit}
 .site-header{height:104px;padding:0 clamp(24px,4.5vw,76px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;border-bottom:1px solid var(--line);position:relative;z-index:10}
 .wordmark{width:max-content;font-size:27px;line-height:.85;letter-spacing:.15em;font-weight:500}.wordmark span{display:block;margin-top:12px;font-size:7px;text-transform:uppercase;letter-spacing:.24em}
@@ -157,23 +157,23 @@ footer .footer-primary{display:grid;grid-template-columns:repeat(2,max-content);
 .services{padding-bottom:69px}
 .services-title h2 em{color:inherit;font-style:normal}
 
-/* Warm ivory and brown palette */
+/* Quiet ivory, linen and olive palette */
 body{background:var(--greige);color:var(--espresso)}
-.site-header{background:rgba(250,249,246,.92)}
-.hero{--hero-surface:color-mix(in srgb,var(--taupe) 32%,var(--beige));background:var(--hero-surface)}
+.site-header{background:rgba(251,249,243,.94)}
+.hero{--hero-surface:color-mix(in srgb,var(--beige) 76%,var(--taupe));background:var(--hero-surface)}
 .hero-visual{position:relative;isolation:isolate;overflow:hidden}
 .hero-image{position:relative;z-index:0}
 .hero-visual::before{display:block!important;content:'';position:absolute!important;inset:0 auto 0 -1px!important;width:clamp(180px,25vw,430px)!important;z-index:3!important;pointer-events:none;background:linear-gradient(90deg,var(--hero-surface) 0%,color-mix(in srgb,var(--hero-surface) 94%,transparent) 18%,color-mix(in srgb,var(--hero-surface) 72%,transparent) 42%,color-mix(in srgb,var(--hero-surface) 38%,transparent) 68%,transparent 100%)!important}
-.services{background:var(--beige)}
+.services{background:var(--ivory)}
 .nuance-statement{background:var(--linen)}
-.permanent-showcase .showcase-panel{background:var(--taupe)}
+.permanent-showcase .showcase-panel{background:var(--beige)}
 .lashes-showcase .showcase-panel{background:var(--ivory)}
-.brows-showcase .showcase-panel{background:var(--carob);color:var(--ivory)}
+.brows-showcase .showcase-panel{background:var(--taupe);color:var(--espresso)}
 .shop{background:var(--greige)}
-.product-stage{background:color-mix(in srgb,var(--taupe) 46%,var(--beige))!important;border-color:var(--carob)}
-.academy{background:var(--beige)}
-.academy-meta{background:var(--carob)}
+.product-stage{background:color-mix(in srgb,var(--beige) 82%,var(--taupe))!important;border-color:var(--taupe)}
+.academy{background:var(--ivory)}
+.academy-meta{background:var(--deep-brown)}
 .primary-button,.book-link,.academy .light-button{background:var(--burgundy)}
 .hero h1,.services-title h2,.shop h2,.academy h2{color:var(--burgundy)}
-footer{background:color-mix(in srgb,var(--taupe) 58%,var(--beige));color:var(--espresso)}
+footer{background:color-mix(in srgb,var(--beige) 64%,var(--taupe));color:var(--espresso)}
 @media(max-width:720px){.hero-visual::before{display:none!important}}
