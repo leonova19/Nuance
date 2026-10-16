@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, MessageCircle, Sparkles } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Sparkles } from 'lucide-react';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 
@@ -38,7 +38,6 @@ export default function Home() {
 
     <section className="shop section-pad" id="shop"><div className="shop-top"><div><p className="eyebrow">04 / Магазин</p><h2>Ароматы для<br/><em>вашего пространства</em></h2></div><div><span className="aromatic">AROMATIC 89</span><p>Детали, которые создают настроение дома, в машине и в каждом дне.</p><a className="text-link" href="#catalog">Смотреть все товары <ArrowRight size={16}/></a></div></div><div className="products" id="catalog">{shopItems.map(([name,type],i) => <article className={`product product-${i+1}`} key={name}><div className="product-stage"><div className="bottle"><i/><b>A89</b></div><span>0{i+1}</span></div><p>{type}</p><h3>{name}</h3><a href="#booking">Смотреть коллекцию <ArrowUpRight size={16}/></a></article>)}</div></section>
 
-    <section className="booking" id="booking"><div><p className="eyebrow light">Запись в NUANCE</p><h2>Ваши детали.<br/><em>Ваш NUANCE.</em></h2></div><div className="booking-copy"><p>Поможем выбрать процедуру, ответим на вопросы и найдём удобное время.</p><div className="booking-actions"><a className="light-button" href="https://instagram.com" target="_blank" rel="noreferrer"><MessageCircle size={18}/> Написать в Instagram</a><a className="ghost-button" href="tel:+3720000000">Позвонить</a></div><small>Контакты и адрес будут добавлены перед запуском</small></div></section>
     <SiteFooter/>
   </main>;
 }
