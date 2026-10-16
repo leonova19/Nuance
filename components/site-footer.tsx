@@ -22,8 +22,8 @@ export function SiteFooter(){
         <p>Jõhvi, Estonia</p>
         <a href="mailto:nuancesupport@gmail.com">nuancesupport@gmail.com</a>
         <div className="footer-legal">{legalLinks.map(([href,label]) => <a href={href} key={href}>{label}</a>)}</div>
+        <p className="footer-copyright">© 2026 NUANCE.</p>
       </div>
-      <p className="footer-copyright">© 2026 NUANCE.</p>
     </div>
   </footer>;
 }
