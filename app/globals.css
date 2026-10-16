@@ -34,7 +34,7 @@ footer{min-height:160px;padding:38px clamp(24px,6.5vw,110px);display:grid;grid-t
 .hero-image{background-image:linear-gradient(rgba(69,43,48,.28),rgba(69,43,48,.4)),url('/hero-interior.png');background-position:72% center;box-shadow:var(--shadow)}
 .hero-image::after{content:'NUANCE';position:absolute;right:-2px;bottom:12px;color:rgba(243,236,216,.78);font-family:Georgia,serif;font-size:clamp(48px,5vw,82px);font-style:italic;letter-spacing:-.05em}
 .hero-side-note{background:var(--sage)}
-.services{background:linear-gradient(180deg,var(--cream-light) 0 70%,var(--cream) 70%);position:relative;overflow:hidden}.services::before{content:'N';position:absolute;right:-.02em;top:1.5%;font:italic 500 clamp(220px,31vw,530px)/.8 Georgia,serif;color:rgba(198,200,155,.22);pointer-events:none}.services>*{position:relative}
+.services{background:var(--cream-light);position:relative;overflow:hidden}.services::before{content:'N';position:absolute;right:-.02em;top:1.5%;font:italic 500 clamp(220px,31vw,530px)/.8 Georgia,serif;color:rgba(198,200,155,.22);pointer-events:none}.services>*{position:relative}
 .section-heading .eyebrow,.shop .eyebrow{color:var(--plum);font-weight:700}.section-heading h2 em,.shop h2 em{background:var(--sage);color:var(--aubergine);padding:0 .12em}
 .feature-card{background:linear-gradient(145deg,var(--plum),var(--aubergine));box-shadow:var(--shadow)}
 .procedure-row:hover{background:var(--sage);padding-left:18px;padding-right:18px}.procedure-row:hover p{color:var(--aubergine)}
