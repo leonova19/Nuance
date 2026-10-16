@@ -24,7 +24,6 @@ export default function Home() {
         <span className="nuance-watermark" aria-hidden="true">NUANCE</span>
         <div className="nuance-statement-copy">
           <h2>NUANCE — это не про изменение внешности<br/><em>Это про детали, которые подчёркивают вашу индивидуальность</em></h2>
-          <p>Каждая процедура начинается с разговора, точного подбора формы и оттенка и заканчивается естественным результатом</p>
         </div>
       </div>
       <div className="service-layout"><article className="feature-card permanent-card"><div><span className="card-index">01</span><h3>Перманентный<br/>макияж</h3></div><Sparkles size={30} strokeWidth={1}/><a href="#booking">Подобрать процедуру <ArrowUpRight size={17}/></a></article><div className="procedure-list">{permanent.map(([n,title,desc]) => <a href="#booking" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3><p>{desc}</p></div><ArrowUpRight size={18}/></a>)}</div></div>
