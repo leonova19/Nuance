@@ -100,3 +100,5 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 @media(max-width:900px){.nuance-statement h2{white-space:normal}}
 .service-layout{grid-template-columns:minmax(230px,.38fr) minmax(0,1.62fr);align-items:start}.permanent-card{min-height:170px;padding:30px;justify-content:center}.permanent-card h3{margin:0;font-size:clamp(34px,3vw,50px)}.procedure-row{min-height:82px}
 @media(max-width:900px){.service-layout{grid-template-columns:1fr}.permanent-card{min-height:150px}.procedure-list{padding-top:10px}}
+.service-layout{grid-template-columns:1fr 1fr;align-items:stretch}.permanent-card{width:min(360px,72%);min-height:180px;align-self:center;justify-self:center}.procedure-list{padding-left:0}
+@media(max-width:900px){.service-layout{grid-template-columns:1fr}.permanent-card{width:100%;min-height:150px;margin:28px 0}.procedure-list{padding-top:0}}
