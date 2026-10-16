@@ -160,10 +160,10 @@ footer .footer-primary{display:grid;grid-template-columns:repeat(2,max-content);
 /* Warm ivory and brown palette */
 body{background:var(--greige);color:var(--espresso)}
 .site-header{background:rgba(250,249,246,.92)}
-.hero{background:var(--linen)}
+.hero{--hero-surface:color-mix(in srgb,var(--taupe) 32%,var(--beige));background:var(--hero-surface)}
 .hero-visual{position:relative;isolation:isolate;overflow:hidden}
 .hero-image{position:relative;z-index:0}
-.hero-visual::before{display:block!important;content:'';position:absolute!important;inset:0 auto 0 -1px!important;width:clamp(180px,25vw,430px)!important;z-index:3!important;pointer-events:none;background:linear-gradient(90deg,var(--linen) 0%,rgba(239,235,230,.98) 16%,rgba(239,235,230,.82) 34%,rgba(239,235,230,.46) 58%,rgba(239,235,230,0) 100%)!important}
+.hero-visual::before{display:block!important;content:'';position:absolute!important;inset:0 auto 0 -1px!important;width:clamp(180px,25vw,430px)!important;z-index:3!important;pointer-events:none;background:linear-gradient(90deg,var(--hero-surface) 0%,color-mix(in srgb,var(--hero-surface) 94%,transparent) 18%,color-mix(in srgb,var(--hero-surface) 72%,transparent) 42%,color-mix(in srgb,var(--hero-surface) 38%,transparent) 68%,transparent 100%)!important}
 .services{background:var(--beige)}
 .nuance-statement{background:var(--linen)}
 .permanent-showcase .showcase-panel{background:var(--taupe)}
