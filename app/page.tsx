@@ -37,9 +37,18 @@ export default function Home() {
           <h2>NUANCE — это не про изменение внешности<br/><em>Это про детали, которые подчёркивают вашу индивидуальность</em></h2>
         </div>
       </div>
-      <div className="service-layout"><article className="feature-card permanent-card"><h3>Перманентный<br/>макияж</h3><a className="feature-more" href="/services">Подробнее</a></article><div className="procedure-list">{permanent.map(([n,title]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3></div></a>)}</div></div>
-      <div className="service-layout lash-layout"><div className="procedure-list">{lashes.map(([n,title]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3></div></a>)}</div><article className="feature-card lash-card"><h3>Наращивание<br/>ресниц</h3><a className="feature-more" href="/services">Подробнее</a></article></div>
-      <div className="service-layout brow-layout"><article className="feature-card brow-card"><h3>Брови</h3><a className="feature-more" href="/services">Подробнее</a></article><div className="procedure-list">{brows.map(([n,title]) => <a href="/services" className="procedure-row" key={title}><span>{n}</span><div><h3>{title}</h3></div></a>)}</div></div>
+      <article className="service-showcase permanent-showcase">
+        <div className="service-photo permanent-photo" role="img" aria-label="Перманентный макияж губ"/>
+        <div className="showcase-panel"><p className="showcase-kicker">Permanent makeup</p><h3>Перманентный<br/>макияж</h3><div className="showcase-list">{permanent.map(([n,title]) => <a href="/services" className="showcase-row" key={title}><span>{n}</span><h4>{title}</h4></a>)}</div><a className="showcase-more" href="/services">Подробнее</a></div>
+      </article>
+      <article className="service-showcase lashes-showcase">
+        <div className="showcase-panel"><p className="showcase-kicker">Lash extensions</p><h3>Наращивание<br/>ресниц</h3><div className="showcase-list">{lashes.map(([n,title]) => <a href="/services" className="showcase-row" key={title}><span>{n}</span><h4>{title}</h4></a>)}</div><a className="showcase-more" href="/services">Подробнее</a></div>
+        <div className="service-photo lashes-photo" role="img" aria-label="Наращивание ресниц"/>
+      </article>
+      <article className="service-showcase brows-showcase">
+        <div className="service-photo brows-photo" role="img" aria-label="Оформление бровей"/>
+        <div className="showcase-panel"><p className="showcase-kicker">Brow design</p><h3>Брови</h3><div className="showcase-list">{brows.map(([n,title]) => <a href="/services" className="showcase-row" key={title}><span>{n}</span><h4>{title}</h4></a>)}</div><a className="showcase-more" href="/services">Подробнее</a></div>
+      </article>
     </section>
 
     <section className="about" id="about"><div className="about-art"><span>N</span><p>NUANCE</p></div><div className="about-copy"><p className="eyebrow">02 / Философия мастера</p><h2>Тонкая работа<br/><em>Никаких случайностей</em></h2><p>NUANCE — это искусство замечать детали, которые на первый взгляд кажутся небольшими, но именно они меняют всё: изгиб ресниц, оттенок пигмента, форма бровей</p><blockquote>«Красота выглядит естественно, когда сделана с уважением к вашей индивидуальности»</blockquote><a className="text-link" href="#booking">Познакомиться с мастером <ArrowRight size={16}/></a></div></section>
