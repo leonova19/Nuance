@@ -92,3 +92,5 @@ body,button,input,textarea,select{font-family:var(--font-jost),sans-serif}.wordm
 @media(max-width:640px){.nuance-statement h2{text-align:center}}
 .nuance-statement-copy{display:block;text-align:center}.nuance-statement-copy>p:not(.nuance-signature){max-width:780px;margin:24px auto 0;padding:0;border:0;font-size:16px;line-height:1.65;text-align:center}
 @media(max-width:640px){.nuance-statement-copy>p:not(.nuance-signature){margin-top:22px;padding:0;font-size:15px}}
+.nuance-statement-copy>p:not(.nuance-signature){width:100%;max-width:none;white-space:nowrap;font-size:clamp(14px,1.15vw,18px)}
+@media(max-width:900px){.nuance-statement-copy>p:not(.nuance-signature){white-space:normal;max-width:720px}}
