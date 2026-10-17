@@ -222,3 +222,9 @@ footer{background:color-mix(in srgb,var(--beige) 64%,var(--taupe));color:var(--e
 .nuance-statement{min-height:360px;margin-bottom:0;display:flex;align-items:center;justify-content:center}
 .services-title{margin-top:0}
 @media(max-width:640px){.nuance-statement{min-height:300px}.services-title{margin-top:0}}
+
+/* Shopping bag with overlapping counter */
+.bag-link{position:relative;width:38px;height:38px;display:flex;align-items:center;justify-content:center;gap:0;color:var(--espresso)}
+.bag-link svg{width:27px;height:27px;stroke-width:1.35}
+.bag-link span{position:absolute;top:-4px;right:-5px;min-width:27px;height:27px;padding:0 6px;border-radius:999px;background:var(--deep-brown);color:var(--ivory);display:flex;align-items:center;justify-content:center;font-size:12px;line-height:1;letter-spacing:0}
+@media(max-width:720px){.bag-link{width:36px;height:36px}.bag-link span{display:flex;top:-3px;right:-4px;min-width:25px;height:25px;font-size:11px}}
