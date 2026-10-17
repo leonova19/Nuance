@@ -228,3 +228,6 @@ footer{background:color-mix(in srgb,var(--beige) 64%,var(--taupe));color:var(--e
 .bag-link svg{width:20px;height:20px;stroke-width:1.4}
 .bag-link span{position:absolute;top:-3px;right:-4px;min-width:19px;height:19px;padding:0 4px;border-radius:999px;background:var(--deep-brown);color:var(--ivory);display:flex;align-items:center;justify-content:center;font-size:9px;line-height:1;letter-spacing:0}
 @media(max-width:720px){.bag-link{width:28px;height:28px}.bag-link span{display:flex;top:-2px;right:-3px;min-width:18px;height:18px;font-size:8px}}
+
+/* Color-graded portrait hero */
+.hero-image{background-image:linear-gradient(rgba(45,48,40,.18),rgba(45,48,40,.34)),url('/hero-portrait.png');background-position:center 34%;background-blend-mode:multiply}
