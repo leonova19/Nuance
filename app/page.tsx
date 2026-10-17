@@ -38,7 +38,7 @@ export default function Home() {
       <div className="nuance-statement">
         <span className="nuance-watermark" aria-hidden="true">NUANCE</span>
         <div className="nuance-statement-copy">
-          <h2>NUANCE — это не про изменение внешности<br/><em>Это про детали, которые подчёркивают вашу индивидуальность</em></h2>
+          <h2>NUANCE это не про изменение внешности<br/><em>Это про детали, которые подчёркивают вашу индивидуальность</em></h2>
         </div>
       </div>
       <div className="services-title"><h2><span>Услуги</span><em>тонкости и красоты</em></h2></div>
