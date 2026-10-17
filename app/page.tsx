@@ -34,7 +34,7 @@ export default function Home() {
       <div className="service-gallery">
         {serviceItems.map(([title,image],index) => <article className="service-tile" key={title}>
           <img src={image} alt={title}/>
-          <div className="service-tile-copy"><span>0{index+1}</span><h3>{title}</h3><a href="/services">Подробнее <ArrowUpRight size={15}/></a></div>
+          <div className="service-tile-copy"><span>0{index+1}</span><h3>{title}</h3><a href="/services">Подробнее</a></div>
         </article>)}
       </div>
     </section>
