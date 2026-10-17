@@ -238,3 +238,9 @@ footer{background:color-mix(in srgb,var(--beige) 64%,var(--taupe));color:var(--e
 .hero h1 em{display:block;margin-top:0;color:inherit;font-family:inherit;font-size:inherit;font-weight:400;font-style:italic;line-height:inherit}
 .hero-intro{width:100%;max-width:28rem;font-family:var(--font-jost),sans-serif;font-size:18px;font-weight:300;line-height:1.55}
 @media(max-width:720px){.hero h1{font-size:clamp(48px,14vw,72px)}.hero-intro{font-size:18px}}
+
+/* Mirror the portrait toward the copy and soften the centre blend */
+.hero-image{background-image:none;background-color:var(--taupe);isolation:isolate}
+.hero-image::before{content:'';position:absolute;inset:-1px;z-index:0;background-image:linear-gradient(rgba(45,48,40,.18),rgba(45,48,40,.34)),url('/hero-portrait.png');background-position:center 34%;background-size:cover;background-blend-mode:multiply;transform:scaleX(-1) scale(1.01)}
+.hero-image::after{z-index:1}
+.hero-visual::before{width:clamp(100px,15vw,260px)!important;background:linear-gradient(90deg,var(--hero-surface) 0%,color-mix(in srgb,var(--hero-surface) 78%,transparent) 18%,color-mix(in srgb,var(--taupe) 40%,transparent) 48%,color-mix(in srgb,var(--taupe) 12%,transparent) 72%,transparent 100%)!important}
