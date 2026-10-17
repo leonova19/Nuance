@@ -2,21 +2,10 @@ import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 
-const permanent = [
-  ['01', 'Пудровое напыление'],
-  ['02', 'Губы'],
-  ['03', 'Стрелка с растушёвкой'],
-  ['04', 'Межресничка'],
-  ['05', 'Ремувер'],
-  ['06', 'Камуфляж шрамов'],
-  ['07', 'Трихопигментация'],
-];
-const lashes = [
-  ['01', 'Традиционное наращивание'],
-  ['02', 'LED-наращивание'],
-];
-const brows = [
-  ['01', 'Оформление бровей хной'],
+const serviceItems = [
+  ['Перманентный макияж', '/service-perman-new.png'],
+  ['Наращивание ресниц', '/service-lash-new.png'],
+  ['Оформление бровей', '/service-brow-new.png'],
 ];
 const shopItems = [
   ['Парфюмерия для дома', 'Диффузоры', '/shop-diffuser.png'],
@@ -42,18 +31,12 @@ export default function Home() {
         </div>
       </div>
       <div className="services-title"><h2><span>Услуги</span><em>тонкости и красоты</em></h2></div>
-      <article className="service-showcase permanent-showcase">
-        <div className="service-photo permanent-photo" role="img" aria-label="Перманентный макияж губ"/>
-        <div className="showcase-panel"><h3>Перманентный<br/>макияж</h3><div className="showcase-list">{permanent.map(([n,title]) => <a href="/services" className="showcase-row" key={title}><span>{n}</span><h4>{title}</h4></a>)}</div><a className="showcase-more" href="/services">Подробнее</a></div>
-      </article>
-      <article className="service-showcase lashes-showcase">
-        <div className="showcase-panel"><h3>Наращивание<br/>ресниц</h3><div className="showcase-list">{lashes.map(([n,title]) => <a href="/services" className="showcase-row" key={title}><span>{n}</span><h4>{title}</h4></a>)}</div><a className="showcase-more" href="/services">Подробнее</a></div>
-        <div className="service-photo lashes-photo" role="img" aria-label="Наращивание ресниц"/>
-      </article>
-      <article className="service-showcase brows-showcase">
-        <div className="service-photo brows-photo" role="img" aria-label="Оформление бровей"/>
-        <div className="showcase-panel"><h3>Брови</h3><div className="showcase-list">{brows.map(([n,title]) => <a href="/services" className="showcase-row" key={title}><span>{n}</span><h4>{title}</h4></a>)}</div><a className="showcase-more" href="/services">Подробнее</a></div>
-      </article>
+      <div className="service-gallery">
+        {serviceItems.map(([title,image],index) => <article className="service-tile" key={title}>
+          <img src={image} alt={title}/>
+          <div className="service-tile-copy"><span>0{index+1}</span><h3>{title}</h3><a href="/services">Подробнее <ArrowUpRight size={15}/></a></div>
+        </article>)}
+      </div>
     </section>
 
     <section className="shop section-pad" id="shop"><div className="shop-top"><div><h2 className="shop-title"><span>Атмосфера начинается</span><em>с аромата</em></h2></div><div><span className="aromatic">89 AROMATIC</span><p>Детали, которые создают настроение дома, в машине и в каждом дне</p><a className="text-link" href="#catalog">Смотреть все товары <ArrowRight size={16}/></a></div></div><div className="products" id="catalog">{shopItems.map(([name,type,image],i) => <article className={`product product-${i+1}`} key={name}><div className="product-stage"><img src={image} alt={name}/><span>0{i+1}</span></div><p>{type}</p><h3>{name}</h3><a href="#booking">Смотреть коллекцию <ArrowUpRight size={16}/></a></article>)}</div></section>
