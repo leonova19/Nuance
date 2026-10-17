@@ -209,3 +209,11 @@ footer{background:color-mix(in srgb,var(--beige) 64%,var(--taupe));color:var(--e
 
 @media(max-width:900px){.service-showcase,.lashes-showcase{grid-template-columns:1fr}.service-photo{min-height:330px}.lashes-showcase .service-photo{order:1}.lashes-showcase .showcase-panel{order:2}.shop .products{gap:18px}}
 @media(max-width:640px){.services{padding-top:54px}.services-title{margin-top:38px;padding-top:28px}.service-showcase{min-height:0;margin-top:14px}.service-photo{min-height:250px}.showcase-panel{padding:34px 26px}.showcase-panel>h3{font-size:42px}.shop.section-pad{padding-top:68px;padding-bottom:72px}.shop-top{padding-bottom:28px}.product-stage{height:360px}}
+
+/* Minimal language switcher */
+.language-switcher{display:flex;align-items:center;gap:18px;padding:0;border:0}
+.language-switcher button{position:relative;min-width:0;height:auto;padding:5px 0;border:0;background:transparent!important;color:var(--espresso);font-size:12px;line-height:1;letter-spacing:.16em;cursor:pointer;opacity:.72;transition:opacity .2s ease}
+.language-switcher button:hover{background:transparent;opacity:1}
+.language-switcher button.active{background:transparent;color:var(--espresso);opacity:1}
+.language-switcher button.active::after{content:'';position:absolute;left:0;right:.16em;bottom:0;height:1px;background:currentColor}
+@media(max-width:720px){.language-switcher{gap:13px}.language-switcher button{min-width:0;height:auto;padding:5px 0;font-size:10px}}
