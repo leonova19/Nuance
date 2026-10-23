@@ -26,7 +26,7 @@ export default function Home() {
     <section className="nuance-statement standalone-statement">
         <span className="nuance-watermark" aria-hidden="true">NUANCE</span>
         <div className="nuance-statement-copy">
-          <h2>NUANCE это не про изменение внешности<br/><em>Это про детали, которые подчёркивают вашу индивидуальность</em></h2>
+          <h2>NUANCE это не про<br className="statement-mobile-break" />{' '}изменения внешности<br/><em>Это про детали, которые подчёркивают<br className="statement-em-break" />{' '}вашу индивидуальность</em></h2>
         </div>
     </section>
     <section className="services section-pad" id="services">

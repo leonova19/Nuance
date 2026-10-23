@@ -14,17 +14,17 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: 'NUANCE — Permanent · Lashes · Brows',
+  title: 'NUANCE - Permanent · Lashes · Brows',
   description: 'Перманентный макияж, наращивание ресниц, оформление бровей, обучение и магазин Aromatic 89.',
   metadataBase: new URL(process.env.SITE_URL ?? 'http://localhost:3000'),
   openGraph: {
-    title: 'NUANCE — Permanent · Lashes · Brows',
+    title: 'NUANCE - Permanent · Lashes · Brows',
     description: 'Естественная красота и мастерство в деталях.',
     images: ['/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NUANCE — Permanent · Lashes · Brows',
+    title: 'NUANCE - Permanent · Lashes · Brows',
     description: 'Естественная красота и мастерство в деталях.',
     images: ['/og.png'],
   },
