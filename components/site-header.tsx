@@ -1,12 +1,12 @@
-import { Menu, ShoppingBag, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { LanguageSwitcher } from '@/components/language-switcher';
+import { CartHeaderLink } from '@/components/cart-header-link';
 
 const links = [
   ['/services', 'Услуги'],
   ['/courses', 'Курсы'],
   ['/shop', 'Магазин'],
   ['/delivery', 'Доставка'],
-  ['/contacts', 'Контакты'],
   ['/about', 'Обо мне'],
 ];
 
@@ -15,7 +15,7 @@ export function SiteHeader() {
     <a className="wordmark" href="/" aria-label="NUANCE - на главную">NUANCE<span>Permanent · Lashes · Brows</span></a>
     <nav className="desktop-nav" aria-label="Основная навигация">{links.map(([href,label]) => <a href={href} key={href}>{label}</a>)}</nav>
     <div className="header-actions">
-      <a className="bag-link" href="/shop" aria-label="Корзина"><ShoppingBag size={18} strokeWidth={1.5}/><span>0</span></a>
+      <CartHeaderLink />
       <div className="desktop-language-switcher"><LanguageSwitcher/></div>
       <details className="mobile-menu">
         <summary aria-label="Открыть или закрыть меню">

@@ -1,3 +1,4 @@
+import { ArrowRight } from 'lucide-react';
 import { SiteFooter } from '@/components/site-footer';
 import { SiteHeader } from '@/components/site-header';
 
@@ -28,6 +29,13 @@ const courseFacts = [
   ['01', '5 дней', 'интенсивного обучения'],
   ['02', '4 направления', 'в одной программе'],
   ['03', '690 €', 'полный курс'],
+];
+
+const individualCourses = [
+  { title: 'Классика', duration: '2 дня', price: '250 €' },
+  { title: 'Объёмное наращивание', duration: '2 дня', price: '200 €' },
+  { title: 'Архитектура и окрашивание бровей хной', duration: '1 день', price: '200 €' },
+  { title: 'LED-наращивание', duration: '1 день', price: '150 €', note: 'Курс для повышения квалификации' },
 ];
 
 export default function CoursesPage() {
@@ -98,6 +106,25 @@ export default function CoursesPage() {
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="course-individual" id="individual-courses">
+          <div className="course-individual-heading">
+            <p className="course-section-label">Курс можно пройти отдельно</p>
+            <h2>Выбери своё направление</h2>
+          </div>
+          <div className="course-individual-grid">
+            {individualCourses.map((course, index) => (
+              <article className="course-individual-card" key={course.title}>
+                <span className="course-individual-number">0{index + 1}</span>
+                <h3>{course.title}</h3>
+                <small>{course.note ?? '\u00a0'}</small>
+                <p>{course.duration}</p>
+                <strong>{course.price}</strong>
+                <a href={`mailto:nuancesupport@gmail.com?subject=${encodeURIComponent(`Запись на курс: ${course.title}`)}`}>Записаться <ArrowRight size={14} aria-hidden="true" /></a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
