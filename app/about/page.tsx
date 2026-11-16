@@ -15,13 +15,13 @@ export default function AboutPage() {
     <section className="about-page-hero">
       <div className="about-page-hero-copy">
         <div className="about-page-author">
-          <p>Jelena Trapeznikova</p>
           <span>Сертифицированный мастер красоты</span>
+          <p>Jelena Trapeznikova</p>
         </div>
-        <p className="about-page-lead">Красота начинается с деталей, а истинная элегантность заключается в гармонии и индивидуальности.</p>
+        <p className="about-page-lead">Красота начинается с деталей, а истинная элегантность заключается в гармонии и индивидуальности</p>
         <p className="about-page-hero-story">Именно эту философию я воплощаю в своей студии Nuance, пространстве, где профессионализм встречается с заботой, а каждая процедура становится особенным моментом для себя.</p>
         <p className="about-page-hero-bio">Я сертифицированный мастер красоты с многолетним опытом работы и искренней любовью к своему делу. Для меня красота не просто результат процедуры, а искусство подчеркнуть то, что делает каждую женщину уникальной.</p>
-        <a className="about-page-hero-link" href="/services">Посмотреть процедуры <ArrowRight size={16} /></a>
+        <a className="about-page-hero-link" href="/services">Посмотреть процедуры</a>
       </div>
       <div className="about-page-hero-image">
         <img src="/about-jelena.png" alt="Jelena Trapeznikova, основательница студии NUANCE" />
@@ -34,9 +34,9 @@ export default function AboutPage() {
         <h2>Красота <em>в нюансах</em></h2>
       </div>
       <div className="about-page-values">
-        <article><span>01</span><h3>Индивидуальность</h3><p>Совершенный образ начинается с деталей. Я учитываю ваши особенности и пожелания, чтобы деликатно подчеркнуть естественную красоту, а не изменить её.</p></article>
-        <article><span>02</span><h3>Опыт и развитие</h3><p>За каждым результатом стоят знания, внимание и стремление к совершенству. Я постоянно развиваю навыки, чтобы предлагать профессиональный подход и высокий уровень сервиса.</p></article>
-        <article><span>03</span><h3>Время для себя</h3><p>Хочу, чтобы в студии Nuance уход за собой становился приятным ритуалом — временем спокойствия, заботы и гармонии.</p></article>
+        <article><h3>Индивидуальность</h3><p>Совершенный образ начинается с деталей. Я учитываю ваши особенности и пожелания, чтобы деликатно подчеркнуть естественную красоту, а не изменить её.</p></article>
+        <article><h3>Опыт и развитие</h3><p>За каждым результатом стоят знания, внимание и стремление к совершенству. Я постоянно развиваю навыки, чтобы предлагать профессиональный подход и высокий уровень сервиса.</p></article>
+        <article><h3>Время для себя</h3><p>Хочу, чтобы в студии Nuance уход за собой становился приятным ритуалом, временем спокойствия, заботы и гармонии.</p></article>
       </div>
     </section>
 
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <p className="about-page-eyebrow">Ваша красота — моя забота</p>
         <blockquote>Nuance объединяет заботу о красоте с философией естественности, элегантности и внимания к себе.</blockquote>
         <p className="about-page-trust-note">Буду рада познакомить вас с атмосферой Nuance и помочь найти тот самый нюанс, который подчеркнёт вашу индивидуальность.</p>
-        <p className="about-page-signoff">С теплом и любовью к своему делу<br /><span>Jelena Trapeznikova</span><small>Основательница студии Nuance</small></p>
+        <p className="about-page-signoff"><small>Основательница студии Nuance</small></p>
       </div>
 
       <div className="about-page-contacts" aria-labelledby="about-contacts-title">
@@ -71,7 +71,7 @@ export default function AboutPage() {
         </a>
         <a className="about-page-contact" href="https://www.facebook.com/share/1MVrkeVuvJ/?mibextid=wwXIfr" target="_blank" rel="noreferrer">
           <span className="about-page-social-mark" aria-hidden="true">f</span>
-          <span><small>Facebook</small>Jelena Trapeznikova</span>
+          <span><small>Facebook</small>Jelena Trapeznikova Permanent</span>
           <ArrowRight size={15} />
         </a>
         </div>

@@ -3,14 +3,14 @@ import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 
 const serviceItems = [
-  ['Перманентный макияж', '/service-perman-new.png'],
-  ['Наращивание ресниц', '/service-lash-new.png'],
-  ['Оформление бровей', '/service-brow-new.png'],
+  ['Перманентный макияж', '/service-perman-new.png', 'permanent'],
+  ['Наращивание ресниц', '/service-lash-new.png', 'lashes'],
+  ['Оформление бровей', '/service-brow-new.png', 'brows'],
 ];
 const shopItems = [
-  ['Парфюмерия для дома', 'Диффузоры', '/shop-diffuser.png'],
-  ['Ароматы для авто', 'Автомобильные ароматы', '/shop-car-brown.png'],
-  ['Уход и парфюм', 'Косметические товары', '/shop-perfume-hands.png'],
+  ['Парфюмерия для дома', 'Диффузоры', '/shop-diffuser.png', 'home'],
+  ['Ароматы для авто', 'Автомобильные ароматы', '/shop-car-brown.png', 'car'],
+  ['Уход и парфюм', 'Косметические товары', '/shop-perfume-hands.png', 'fragrance'],
 ];
 
 export default function Home() {
@@ -32,16 +32,16 @@ export default function Home() {
     <section className="services section-pad" id="services">
       <div className="services-title"><p className="services-eyebrow">Услуги</p><h2>Что я делаю</h2></div>
       <div className="service-gallery">
-        {serviceItems.map(([title,image],index) => <article className="service-tile" key={title}>
+        {serviceItems.map(([title,image,category]) => <article className="service-tile" key={title}>
           <img src={image} alt={title}/>
-          <div className="service-tile-copy"><span>0{index+1}</span><h3>{title}</h3><a href="/services">Подробнее</a></div>
+          <div className="service-tile-copy"><h3>{title}</h3><a href={`/services?category=${category}`}>Подробнее</a></div>
         </article>)}
       </div>
     </section>
 
     <section className="academy section-pad course-feature" id="academy"><div className="academy-image" role="img" aria-label="Материалы и инструменты для обучения наращиванию ресниц и оформлению бровей"/><div className="academy-copy"><p className="course-eyebrow">Обучение</p><h2>Обучение наращиванию ресниц и оформлению бровей</h2><p className="course-label">Полный курс</p><p className="course-description">Теория и практика на моделях, работа с материалами, постановка руки и сертификат по окончании курса.</p><a className="light-button" href="/courses">Узнать о курсе</a></div><div className="course-benefits"><div><p>Теория</p><p>Практика</p><p>Поддержка</p></div></div></section>
 
-    <section className="shop section-pad" id="shop"><div className="shop-top"><div><h2 className="shop-title"><span>Атмосфера начинается</span><em>с аромата</em></h2></div><div><span className="aromatic">89 AROMATIC</span><p>Детали, которые создают настроение дома, в машине и в каждом дне</p><a className="text-link" href="#catalog">Смотреть все товары <ArrowRight size={16}/></a></div></div><div className="products" id="catalog">{shopItems.map(([name,type,image],i) => <article className={`product product-${i+1}`} key={name}><div className="product-stage">{i === 0 ? <div className="home-photo-pair"><img src="/shop-home-diffuser-v2.png" alt="Ароматический диффузор"/><img src="/shop-home-candles-v2.png" alt="Ароматические свечи"/></div> : <img src={image} alt={name}/>}<span>0{i+1}</span></div><p>{type}</p><h3>{name}</h3><a href="#booking">Смотреть коллекцию <ArrowUpRight size={16}/></a></article>)}</div></section>
+    <section className="shop section-pad" id="shop"><div className="shop-top"><div><h2 className="shop-title"><span>Атмосфера начинается</span><em>с аромата</em></h2></div><div><span className="aromatic">89 AROMATIC</span><p>Детали, которые создают настроение дома, в машине и в каждом дне</p><a className="text-link" href="#catalog">Смотреть все товары <ArrowRight size={16}/></a></div></div><div className="products" id="catalog">{shopItems.map(([name,type,image,category],i) => <article className={`product product-${i+1}`} key={name}><div className="product-stage">{i === 0 ? <div className="home-photo-pair"><img src="/shop-home-diffuser-v2.png" alt="Ароматический диффузор"/><img src="/shop-home-candles-v2.png" alt="Ароматические свечи"/></div> : <img src={image} alt={name}/>}</div><p>{type}</p><h3>{name}</h3><a href={`/shop?category=${category}`}>Смотреть коллекцию <ArrowUpRight size={16}/></a></article>)}</div></section>
 
     <SiteFooter/>
   </main>;
