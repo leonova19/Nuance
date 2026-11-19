@@ -7,6 +7,7 @@ export type Product = {
   image: string;
   imageClass?: string;
   aromaCount?: number;
+  aromas?: string[];
   aroma?: string;
   description?: string;
   fullDescription?: string;

@@ -1,8 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { useCallback, useEffect, useState, type ComponentProps } from 'react';
+import Image from 'next/image';
+import { useCallback, useEffect, useRef, useState, type ChangeEvent, type ComponentProps, type DragEvent } from 'react';
 import { ArrowLeft, Check, LoaderCircle, LogOut, PackagePlus, Pencil, Plus, Trash2, X } from 'lucide-react';
+import { aromaOptions, getProductAromaNames } from '@/app/shop/aromas';
 import type { Product } from '@/app/shop/products';
 import type { AdminProduct } from '@/lib/shop/catalog';
 
@@ -17,6 +19,7 @@ type Draft = {
   fullDescription: string;
   volume: string;
   aroma: string;
+  aromas: string[];
   composition: string;
   usage: string;
 };
@@ -25,7 +28,7 @@ type FormSubmitEvent = Parameters<NonNullable<ComponentProps<'form'>['onSubmit']
 
 const blankDraft: Draft = {
   id: '', category: 'home', label: 'Для дома', name: '', price: '', image: '',
-  description: '', fullDescription: '', volume: '', aroma: '', composition: '', usage: '',
+  description: '', fullDescription: '', volume: '', aroma: '', aromas: [], composition: '', usage: '',
 };
 
 const categoryOptions: { value: Product['category']; label: string }[] = [
@@ -56,6 +59,7 @@ function draftFromProduct(product: AdminProduct): Draft {
     fullDescription: product.fullDescription ?? '',
     volume: product.volume ?? '',
     aroma: product.aroma ?? '',
+    aromas: getProductAromaNames(product.id, product.aromas),
     composition: product.composition ?? '',
     usage: product.usage ?? '',
   };
@@ -81,6 +85,10 @@ export default function AdminPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [isAvailable, setIsAvailable] = useState(true);
   const [priceError, setPriceError] = useState('');
+  const [aromaPickerOpen, setAromaPickerOpen] = useState(false);
+  const [uploadingImage, setUploadingImage] = useState(false);
+  const [imageUploadError, setImageUploadError] = useState('');
+  const imageInputRef = useRef<HTMLInputElement>(null);
 
   const loadProducts = useCallback(async () => {
     setLoadingProducts(true);
@@ -142,6 +150,8 @@ export default function AdminPage() {
     setDraft(blankDraft);
     setIsAvailable(true);
     setPriceError('');
+    setImageUploadError('');
+    setAromaPickerOpen(false);
     setError('');
   };
 
@@ -150,6 +160,8 @@ export default function AdminPage() {
     setDraft(draftFromProduct(product));
     setIsAvailable(product.isAvailable);
     setPriceError('');
+    setImageUploadError('');
+    setAromaPickerOpen(false);
     setError('');
   };
 
@@ -160,6 +172,12 @@ export default function AdminPage() {
     setError('');
     setMessage('');
     setPriceError('');
+
+    if (!draft.image.trim()) {
+      setError('Сначала загрузите фото товара.');
+      setSaving(false);
+      return;
+    }
 
     const price = draft.price.trim() === '' ? null : Number(draft.price.replace(',', '.'));
     if (price !== null && (!Number.isFinite(price) || price < 0)) {
@@ -172,6 +190,8 @@ export default function AdminPage() {
       ...draft,
       id: editingId ?? slugify(draft.id || draft.name),
       price,
+      aromas: draft.aromas,
+      aromaCount: draft.aromas.length || undefined,
       imageClass: 'shop-product-image--tall shop-product-image--blend-background',
     };
 
@@ -250,6 +270,47 @@ export default function AdminPage() {
     });
   };
 
+  const toggleAroma = (aromaName: string) => {
+    setDraft((current) => {
+      if (!current) return current;
+      const aromas = current.aromas.includes(aromaName)
+        ? current.aromas.filter((name) => name !== aromaName)
+        : [...current.aromas, aromaName];
+      return { ...current, aromas };
+    });
+  };
+
+  const uploadProductImageFile = async (file: File) => {
+    if (!file) return;
+    setImageUploadError('');
+    setError('');
+    setUploadingImage(true);
+    try {
+      const formData = new FormData();
+      formData.set('image', file);
+      const result = await readJson<{ imageUrl: string }>(await fetch('/api/admin/products/image', { method: 'POST', body: formData }));
+      updateDraft('image', result.imageUrl);
+    } catch (uploadError) {
+      setImageUploadError(uploadError instanceof Error ? uploadError.message : 'Не удалось загрузить фото.');
+    } finally {
+      setUploadingImage(false);
+    }
+  };
+
+  const uploadProductImage = async (event: ChangeEvent<HTMLInputElement>) => {
+    const input = event.currentTarget;
+    const file = input.files?.[0];
+    if (file) await uploadProductImageFile(file);
+    input.value = '';
+  };
+
+  const dropProductImage = (event: DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    if (uploadingImage) return;
+    const file = event.dataTransfer.files[0];
+    if (file) void uploadProductImageFile(file);
+  };
+
   if (checkingSession) return <main className="admin-page"><div className="admin-loading"><LoaderCircle size={22} className="admin-spinner" /> Проверяем доступ…</div></main>;
 
   if (!authenticated) return <main className="admin-page">
@@ -277,24 +338,43 @@ export default function AdminPage() {
       {draft && <section className="admin-editor">
         <div className="admin-editor-heading"><div><p className="shop-page-eyebrow">{editingId ? 'Редактирование' : 'Новый товар'}</p><h2>{editingId ? draft.name : 'Добавить товар'}</h2></div><button type="button" className="admin-icon-button" aria-label="Закрыть форму" onClick={() => setDraft(null)}><X size={18} /></button></div>
         <form className="admin-form admin-product-form" onSubmit={saveProduct}>
-          <label>Название<input required maxLength={160} value={draft.name} onChange={(event) => updateDraft('name', event.target.value)} /></label>
-          <label>Адрес товара (slug)<input required pattern="[a-z0-9]+(-[a-z0-9]+)*" disabled={Boolean(editingId)} value={editingId ?? draft.id} onChange={(event) => updateDraft('id', event.target.value)} placeholder="novyy-tovar" /><small>Латинские буквы, цифры и дефисы; используется в адресе страницы.</small></label>
-          <label>Раздел магазина<select value={draft.category} onChange={(event) => updateDraft('category', event.target.value as Product['category'])}>{categoryOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</select></label>
-          <label>Подпись над названием<input required maxLength={80} value={draft.label} onChange={(event) => updateDraft('label', event.target.value)} /></label>
-          <label>Цена, €<input inputMode="decimal" value={draft.price} onChange={(event) => updateDraft('price', event.target.value)} placeholder="Например, 23" aria-invalid={Boolean(priceError)} />{priceError && <small className="admin-error">{priceError}</small>}</label>
-          <label>Изображение: путь или HTTPS-ссылка<input required value={draft.image} onChange={(event) => updateDraft('image', event.target.value)} placeholder="/shop-product.png" /><small>Для файлов сайта укажите путь из public, например /shop-product.png.</small></label>
-          <label className="admin-form-wide">Краткое описание<textarea rows={3} value={draft.description} onChange={(event) => updateDraft('description', event.target.value)} /></label>
-          <label className="admin-form-wide">Полное описание<textarea rows={4} value={draft.fullDescription} onChange={(event) => updateDraft('fullDescription', event.target.value)} /></label>
-          <label>Объём<input value={draft.volume} onChange={(event) => updateDraft('volume', event.target.value)} placeholder="Например, 100 мл" /></label>
-          <label>Фиксированный аромат<input value={draft.aroma} onChange={(event) => updateDraft('aroma', event.target.value)} /></label>
-          <label className="admin-form-wide">Состав<textarea rows={3} value={draft.composition} onChange={(event) => updateDraft('composition', event.target.value)} /></label>
+          <label className="admin-form-wide">Название товара<input required maxLength={160} value={draft.name} onChange={(event) => updateDraft('name', event.target.value)} /></label>
+          <label>Категория<select value={draft.category} onChange={(event) => updateDraft('category', event.target.value as Product['category'])}>{categoryOptions.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}</select></label>
+          <label>Сколько стоит<input aria-label="Сколько стоит, евро" inputMode="decimal" value={draft.price} onChange={(event) => updateDraft('price', event.target.value)} aria-invalid={Boolean(priceError)} />{priceError && <small className="admin-error">{priceError}</small>}</label>
+          <div className="admin-form-wide admin-aroma-picker">
+            <span className="admin-field-label">Выбор ароматов</span>
+            <button type="button" className="admin-secondary-button admin-aroma-picker-toggle" aria-expanded={aromaPickerOpen} onClick={() => setAromaPickerOpen((open) => !open)}><Plus size={15} /> Добавить аромат <span>{draft.aromas.length ? `Выбрано: ${draft.aromas.length}` : 'Не выбраны'}</span></button>
+            {aromaPickerOpen && <div className="admin-aroma-options" role="group" aria-label="Доступные ароматы">
+              {aromaOptions.map((aroma) => <label className="admin-checkbox admin-aroma-option" key={aroma.name}><input type="checkbox" checked={draft.aromas.includes(aroma.name)} onChange={() => toggleAroma(aroma.name)} /><span>{aroma.name}</span></label>)}
+            </div>}
+          </div>
+          <div className="admin-form-wide admin-image-field">
+            <span className="admin-field-label">Фото товара</span>
+            <div className={`admin-image-dropzone${uploadingImage ? ' is-uploading' : ''}`} onDragOver={(event) => event.preventDefault()} onDrop={dropProductImage}>
+              <input ref={imageInputRef} className="admin-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/avif" onChange={uploadProductImage} disabled={uploadingImage} aria-label="Выберите фото товара" />
+              <span>{uploadingImage ? 'Загружаем фото…' : 'Перетащите фото сюда или'}</span>
+              <button type="button" className="admin-secondary-button" onClick={() => imageInputRef.current?.click()} disabled={uploadingImage}>{uploadingImage ? 'Загрузка…' : 'Добавить файл'}</button>
+              <small>PNG, JPG, WebP или AVIF, до 8 МБ</small>
+            </div>
+            {imageUploadError && <small className="admin-error" role="alert">{imageUploadError}</small>}
+            {draft.image && <div className="admin-image-preview"><Image src={draft.image} alt={`Предпросмотр: ${draft.name || 'товар'}`} width={80} height={80} unoptimized /><span>Фото товара</span></div>}
+          </div>
+          <label className="admin-form-wide">Описание товара<textarea rows={4} value={draft.fullDescription} onChange={(event) => updateDraft('fullDescription', event.target.value)} /></label>
           <label className="admin-form-wide">Как использовать<textarea rows={3} value={draft.usage} onChange={(event) => updateDraft('usage', event.target.value)} /></label>
+          <label className="admin-form-wide">Состав<textarea rows={3} value={draft.composition} onChange={(event) => updateDraft('composition', event.target.value)} /></label>
+          <details className="admin-form-wide admin-extra-fields"><summary>Дополнительные данные карточки</summary><div className="admin-extra-fields-grid">
+            <label>Адрес товара (slug)<input required pattern="[a-z0-9]+(-[a-z0-9]+)*" disabled={Boolean(editingId)} value={editingId ?? draft.id} onChange={(event) => updateDraft('id', event.target.value)} placeholder="novyy-tovar" /><small>Латинские буквы, цифры и дефисы; используется в адресе страницы.</small></label>
+            <label>Подпись над названием<input required maxLength={80} value={draft.label} onChange={(event) => updateDraft('label', event.target.value)} /></label>
+            <label>Объём<input value={draft.volume} onChange={(event) => updateDraft('volume', event.target.value)} placeholder="Например, 100 мл" /></label>
+            <label>Краткое описание карточки<textarea rows={3} value={draft.description} onChange={(event) => updateDraft('description', event.target.value)} /></label>
+            <label className="admin-form-wide">Аромат по умолчанию<input value={draft.aroma} onChange={(event) => updateDraft('aroma', event.target.value)} /></label>
+          </div></details>
           <label className="admin-checkbox admin-form-wide"><input type="checkbox" checked={isAvailable} onChange={(event) => setIsAvailable(event.target.checked)} /><span>Товар в наличии и показывается на сайте</span></label>
-          <div className="admin-form-actions admin-form-wide"><button className="admin-primary-button" type="submit" disabled={saving}>{saving ? 'Сохраняем…' : 'Сохранить товар'}</button><button type="button" className="admin-secondary-button" onClick={() => setDraft(null)}>Отмена</button></div>
+          <div className="admin-form-actions admin-form-wide"><button className="admin-primary-button" type="submit" disabled={saving || uploadingImage}>{saving ? 'Сохраняем…' : 'Сохранить товар'}</button><button type="button" className="admin-secondary-button" onClick={() => setDraft(null)}>Отмена</button></div>
         </form>
       </section>}
 
-      <div className="admin-list-heading"><div><p className="shop-page-eyebrow">Каталог</p><h2>{loadingProducts ? 'Загрузка…' : `${products.length} товаров`}</h2></div><button type="button" className="admin-primary-button" onClick={startNewProduct} disabled={loadingProducts || products.length === 0}><Plus size={16} /> Добавить товар</button></div>
+      <div className="admin-list-heading"><div><p className="shop-page-eyebrow">Каталог</p><h2>{loadingProducts ? 'Загрузка…' : `${products.length} товаров`}</h2></div><button type="button" className="admin-primary-button" onClick={startNewProduct} disabled={loadingProducts}><Plus size={16} /> Добавить товар</button></div>
       {!loadingProducts && products.length === 0 && <section className="admin-empty"><PackagePlus size={26} /><h2>Каталог ещё не импортирован</h2><p>Перенесите текущие товары из сайта в базу. Эта кнопка доступна только для пустой таблицы и не перезаписывает существующие данные.</p><button type="button" className="admin-primary-button" onClick={seedCatalog} disabled={saving}>{saving ? 'Импортируем…' : 'Импортировать текущий каталог'}</button></section>}
 
       {products.length > 0 && <div className="admin-product-list">

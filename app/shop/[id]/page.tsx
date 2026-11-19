@@ -37,7 +37,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
   if (!product) notFound();
 
-  const hasAromaVariants = (product.aromaCount ?? 0) > 1;
+  const hasAromaVariants = product.aromas !== undefined ? product.aromas.length > 0 : (product.aromaCount ?? 0) > 1;
 
   return <main className="shop-product-detail-page">
     <SiteHeader />

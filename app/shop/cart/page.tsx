@@ -84,7 +84,7 @@ export default function CartPage() {
             <div className="shop-cart-page-product">
               <p className="shop-page-eyebrow">{item.label}</p>
               <h2>{item.name}</h2>
-              {item.aroma && <p className="shop-cart-page-aroma">Аромат: {item.aroma}</p>}
+              {item.aroma ? <p className="shop-cart-page-aroma">Аромат: {item.aroma}</p> : item.aromaCount ? <p className="shop-cart-page-aroma"><Link href={`/shop/${item.id}`}>Выбрать аромат</Link></p> : null}
             </div>
             <button type="button" className="shop-cart-page-remove" onClick={() => removeItem(item.key)} aria-label={`Удалить ${item.name} из корзины`}><Trash2 size={16} /></button>
             <div className="shop-cart-page-actions">
@@ -112,7 +112,7 @@ export default function CartPage() {
         <div className="shop-product-grid">
           {recommendedProducts.map((product) => <article className="shop-product-card" key={product.id}>
             <div className="shop-product-visual"><Link href={`/shop/${product.id}`} className={`shop-product-image-trigger ${product.imageClass?.includes('shop-product-image--blend-background') ? 'shop-product-image-trigger--blend-background' : ''}`} aria-label={`Открыть товар: ${product.name}`}><Image className={product.imageClass ?? ''} src={product.image} alt="" fill unoptimized sizes="(max-width: 760px) 45vw, 20vw" /></Link>{product.aromaCount && <span className="shop-aroma-count">+{product.aromaCount} ароматов</span>}</div>
-            <div className="shop-product-info"><p className="shop-product-label">{product.label}</p><Link className="shop-product-name" href={`/shop/${product.id}`}><h3>{product.name}</h3></Link><div className="shop-product-bottom"><strong className="site-price">{formatPrice(product.price)}</strong><button type="button" className="shop-product-action" onClick={() => addRecommendedProduct(product.id)}><Plus size={15} /> Добавить</button></div></div>
+            <div className="shop-product-info"><p className="shop-product-label">{product.label}</p><Link className="shop-product-name" href={`/shop/${product.id}`}><h3>{product.name}</h3></Link><div className="shop-product-bottom"><strong className="site-price">{formatPrice(product.price)}</strong>{product.aromaCount ? <Link className="shop-product-action shop-product-action--link" href={`/shop/${product.id}`}>Выбрать аромат</Link> : <button type="button" className="shop-product-action" onClick={() => addRecommendedProduct(product.id)}><Plus size={15} /> Добавить</button>}</div></div>
           </article>)}
         </div>
       </section>}

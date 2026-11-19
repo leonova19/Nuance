@@ -1,9 +1,10 @@
 import type { Product } from '@/app/shop/products';
+import { aromaOptions } from '@/app/shop/aromas';
 
 const categories = new Set<Product['category']>(['home', 'car', 'fragrance', 'gifts', 'care']);
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
-type EditableFields = Pick<Product, 'id' | 'category' | 'label' | 'name' | 'price' | 'image' | 'description' | 'fullDescription' | 'volume' | 'aroma' | 'composition' | 'usage'>;
+type EditableFields = Pick<Product, 'id' | 'category' | 'label' | 'name' | 'price' | 'image' | 'description' | 'fullDescription' | 'volume' | 'aroma' | 'aromas' | 'composition' | 'usage'>;
 
 export type ProductMutation = {
   product?: Partial<EditableFields>;
@@ -68,6 +69,17 @@ export function parseProductMutation(value: unknown, existing?: Product): Produc
     image,
     usage,
   };
+
+  const aromasValue = raw.aromas === undefined ? existing?.aromas : raw.aromas;
+  if (aromasValue !== undefined) {
+    const knownAromas = new Set(aromaOptions.map((aroma) => aroma.name));
+    if (!Array.isArray(aromasValue) || aromasValue.length > knownAromas.size || aromasValue.some((aroma) => typeof aroma !== 'string' || !knownAromas.has(aroma)) || new Set(aromasValue).size !== aromasValue.length) {
+      throw new Error('Выберите ароматы из списка.');
+    }
+    product.aromas = aromasValue as string[];
+    if (product.aromas.length) product.aromaCount = product.aromas.length;
+    else delete product.aromaCount;
+  }
 
   const optionalFields = [
     ['description', 'описание', 3000],
