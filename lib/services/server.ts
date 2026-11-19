@@ -30,7 +30,26 @@ async function readRows() {
 export async function getServiceItems() {
   let rows: ServiceItem[] | null = null;
   try { rows = await readRows(); } catch { rows = null; }
-  return rows && rows.length > 0 ? rows : defaultServices;
+  if (!rows || rows.length === 0) return defaultServices;
+  const correction = defaultServices.find((item) => item.name === 'Коррекция межреснички');
+  if (correction) {
+    const correctionIndex = rows.findIndex((item) => item.id === correction.id || item.name === correction.name);
+    if (correctionIndex < 0) {
+      const generalCorrectionIndex = rows.findIndex((item) => item.category === 'permanent' && item.name === 'Коррекция');
+      rows.splice(generalCorrectionIndex < 0 ? rows.length : generalCorrectionIndex, 0, correction);
+    } else if (!rows[correctionIndex].duration) {
+      rows[correctionIndex] = { ...rows[correctionIndex], duration: correction.duration };
+    }
+  }
+  const refreshIndex = rows.findIndex((item) => item.name === 'Рефреш');
+  const refresh = refreshIndex >= 0
+    ? rows.splice(refreshIndex, 1)[0]
+    : defaultServices.find((item) => item.category === 'permanent' && item.name === 'Рефреш');
+  if (refresh) {
+    const lastPermanentOrder = rows.reduce((max, item) => item.category === 'permanent' ? Math.max(max, item.sortOrder) : max, -1);
+    rows.push({ ...refresh, category: 'permanent', sortOrder: lastPermanentOrder + 1 });
+  }
+  return rows;
 }
 
 export async function getServiceGroups() {
