@@ -58,7 +58,7 @@ export default function CoursesPage() {
           {courseFacts.map(([, value, label]) => (
             <div className="course-hero-fact" key={value}>
               <div className="course-hero-fact-copy">
-                <strong>{value}</strong>
+                <strong className={value.includes('€') ? 'site-price' : undefined}>{value}</strong>
                 <span>{label}</span>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function CoursesPage() {
                 <h3>{course.title}</h3>
                 <small>{course.note ?? '\u00a0'}</small>
                 <p>{course.duration}</p>
-                <strong>{course.price}</strong>
+                <strong className="site-price">{course.price}</strong>
                 <a href={`mailto:nuancesupport@gmail.com?subject=${encodeURIComponent(`Запись на курс: ${course.title}`)}`}>Записаться <ArrowRight size={14} aria-hidden="true" /></a>
               </article>
             ))}
@@ -168,7 +168,7 @@ export default function CoursesPage() {
         </div>
         <div className="course-result-note">
           <div className="course-section-label">Инвестируй в себя и свое будущее</div>
-          <strong>690 €</strong>
+          <strong className="site-price">690 €</strong>
           <p>
             Профессия в beauty-индустрии - это возможность творчески
             реализовываться, развивать собственный стиль и строить карьеру в сфере

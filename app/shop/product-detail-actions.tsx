@@ -246,7 +246,7 @@ export function ProductDetailActions({ product }: { product: Product }) {
               {aroma.notes.map((note) => <div className="shop-aroma-note-tile" key={`${aroma.name}-${note.name}`}><span>{note.name}</span>{'image' in note && note.image ? <img src={note.image} alt={note.name} loading="lazy" /> : <span className="shop-aroma-note-placeholder" aria-hidden="true" />}</div>)}
             </div>}
             {aroma.description && <details className="shop-aroma-description-details"><summary><span>Описание аромата</span><ChevronDown size={15} aria-hidden="true" /></summary><p>{aroma.description}</p></details>}
-            <div className="shop-aroma-option-footer"><strong>{formatPrice(product.price)}</strong><div className="shop-aroma-option-actions"><div className="shop-detail-quantity" aria-label={`Количество: ${aroma.name}`}><button type="button" aria-label={`Уменьшить количество ${aroma.name}`} onClick={() => changeQuantity(aroma.name, -1)}><Minus size={12} /></button><span>{quantity}</span><button type="button" aria-label={`Увеличить количество ${aroma.name}`} onClick={() => changeQuantity(aroma.name, 1)}><Plus size={12} /></button></div><AddToCartButton product={product} aroma={aroma.name} quantity={quantity} /></div></div>
+            <div className="shop-aroma-option-footer"><strong className="site-price">{formatPrice(product.price)}</strong><div className="shop-aroma-option-actions"><div className="shop-detail-quantity" aria-label={`Количество: ${aroma.name}`}><button type="button" aria-label={`Уменьшить количество ${aroma.name}`} onClick={() => changeQuantity(aroma.name, -1)}><Minus size={12} /></button><span>{quantity}</span><button type="button" aria-label={`Увеличить количество ${aroma.name}`} onClick={() => changeQuantity(aroma.name, 1)}><Plus size={12} /></button></div><AddToCartButton product={product} aroma={aroma.name} quantity={quantity} /></div></div>
           </article>;
         })()}
         {availableAromaOptions.length > 1 && <div className="shop-aroma-carousel-controls">
@@ -258,7 +258,7 @@ export function ProductDetailActions({ product }: { product: Product }) {
     </section>}
 
     {!variantProduct && <div className="shop-product-detail-buy">
-      <div className="shop-detail-main-price"><span>Цена</span><strong>{formatPrice(product.price)}</strong></div>
+      <div className="shop-detail-main-price"><span>Цена</span><strong className="site-price">{formatPrice(product.price)}</strong></div>
       <div className="shop-aroma-option-actions"><div className="shop-detail-quantity" aria-label="Количество основного товара"><button type="button" aria-label="Уменьшить количество товара" onClick={() => changeQuantity('main', -1)}><Minus size={12} /></button><span>{mainQuantity}</span><button type="button" aria-label="Увеличить количество товара" onClick={() => changeQuantity('main', 1)}><Plus size={12} /></button></div><AddToCartButton product={product} aroma={product.aroma} quantity={mainQuantity} /></div>
     </div>}
     <CartToast />

@@ -31,8 +31,8 @@ export default function DeliveryPage() {
               <li>Самовывоз</li>
             </ul>
             <div className="delivery-details">
-              <p className="delivery-cost-row"><Truck aria-hidden="true" /><span>Стоимость доставки 3 €</span></p>
-              <p className="delivery-icon-row"><Gift aria-hidden="true" /><span>Бесплатная доставка от 80 €</span></p>
+              <p className="delivery-cost-row"><Truck aria-hidden="true" /><span>Стоимость доставки <strong className="site-price">3 €</strong></span></p>
+              <p className="delivery-icon-row"><Gift aria-hidden="true" /><span>Бесплатная доставка от <strong className="site-price">80 €</strong></span></p>
               <p className="delivery-icon-row"><Clock3 aria-hidden="true" /><span>Сроки доставки: заказ будет собран и отправлен в течение 1–3 рабочих дней. В выходные и праздничные дни отправка не осуществляется.</span></p>
             </div>
             <p className="delivery-shipping-note">

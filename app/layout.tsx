@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Jost } from 'next/font/google';
+import { Cormorant_Garamond, Jost, Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
 
 const jost = Jost({
@@ -11,6 +11,12 @@ const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
   weight: ['300', '400', '500', '600', '700'],
   subsets: ['latin', 'cyrillic'],
+});
+
+const notoSansJp = Noto_Sans_JP({
+  variable: '--font-noto-sans-jp',
+  weight: 'variable',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body
-        className={`${jost.variable} ${cormorant.variable} antialiased`}
+        className={`${jost.variable} ${cormorant.variable} ${notoSansJp.variable} antialiased`}
       >
         {children}
       </body>
